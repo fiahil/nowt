@@ -4,5 +4,5 @@ Nowt::Application.routes.draw do
   root 'home#index'
 
   resources :posts
-  resources :users
+  resources :users, only: [:show, :index]
 end
