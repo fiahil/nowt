@@ -35,7 +35,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   def update
     respond_to do |format|
-      if @post.update(post_params)
+      if @post.increment(:update_count) && @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
       else
         format.html { render action: 'edit' }
@@ -59,6 +59,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :description, :update_count)
+      params.require(:post).permit(:title, :description)
     end
 end
