@@ -24,9 +24,6 @@ gem 'therubyracer'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-# Use Foundation for rendering
-gem 'foundation-rails'
-
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
