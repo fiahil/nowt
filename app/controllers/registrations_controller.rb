@@ -1,17 +1,14 @@
 class RegistrationsController < Devise::RegistrationsController
+  before_filter :configure_permitted_parameters, if: :devise_controller?
+
   def new
     super
   end
 
-  def create
-    super
-    @user.name = params.require(:user).require(:name)
-    @user.save
-  end
+  protected
 
-  def update
-    super
-    @user.name = params.require(:user).require(:name)
-    @user.save
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :name
+    devise_parameter_sanitizer.for(:account_update) << :name
   end
 end
