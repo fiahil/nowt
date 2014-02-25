@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/new
-  def new
+  def new 
     @post = Post.new
   end
 

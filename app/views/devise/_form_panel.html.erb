@@ -9,11 +9,15 @@
 				<div class="panel-title"><%= form_type %></div>
 			</div>
 			
-			<div class='panel-body'>
+			<div class='panel-body form-panel-body'>
 				<%= render(form_partial) %>
 			</div>
-			<div class='panel-footer'>
+			
 				<% if form_type == 'Sign In' %>
+					<div class="login-or">
+		            	<hr class="hr-or">
+		            	<span class="span-or">or</span>
+		          	</div>
 					<%= render :partial => 'devise/sessions/external_sign_in' %>
 				<% end %>
 			</div>
