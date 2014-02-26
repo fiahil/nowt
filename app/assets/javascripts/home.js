@@ -35,16 +35,24 @@ $(function(){
 					</a> \
 				</div> \
 			</div>'; 
+		var count = $(".interests > div").length;
+		if(count < 3) {
+			$('html, body').animate({
+		        scrollTop: $(".interest-row:last-child").offset().top
+		    }, 500);
 
-		$(row).appendTo($('.interests'));
-		$(".interest-row:last-child").slideDown('slow');
-
+			$(row).appendTo($('.interests'));
+			$(".interest-row:last-child").stop().slideDown('slow');
+		}
 	});
 
 	$('#hide-interests').click(function(){
-		$(".interest-row:last-child").slideUp('slow', function(){
-			$(".interest-row:last-child").remove();
-		});
+		var count = $(".interests > div").length;
+		if(count > 1) {
+			$(".interest-row:last-child").stop().slideUp('slow', function(){
+				$(".interest-row:last-child").remove();
+			});
+		}
 	});
 
 });
