@@ -7,7 +7,7 @@
 		        		<img class="media-object dp img-circle tooltips" src="http://www.rovers.co.uk/images/common/bg_player_profile_default_big.png" data-toggle = "tooltip" data-placement ="top" title ="Edit your profile" style="width: 50px;height:50px;">
 		    		</a>
 		            <div class="profile-body">																									
-		                <h4 class="media-heading">Anonymous</h4>
+		                <h4 class="media-heading"><%= @user.name %></h4>
 		                <h5>California State University, Long Beach</h5>
 		                <hr style="margin:8px auto">
 
@@ -20,11 +20,46 @@
 		    </div>
 		    <div class="row col-sm-12 col-md-12 col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-header">
+					<div class="panel-heading">
 						<h4>Trending</h4>
 					</div>
-					<div class="panel-body">
-					trending shiett...
+					<div class="panel-body trending">
+						<div class="row trending-row">
+							<div class="col-sm-6 col-md-6 col-lg-6">
+								<a href="#" class="thumbnail">
+		    						<caption>
+		    							<h3>Nowt 1</h3>
+		    							<p>nowt description</p>
+		    						</caption>
+		    					</a>
+							</div>
+							<div class="col-sm-6 col-md-6 col-lg-6">
+								<a href="#" class="thumbnail">
+		    						<caption>
+		    							<h3>Nowt 1</h3>
+		    							<p>nowt description</p>
+		    						</caption>
+		    					</a>
+							</div>
+						</div>
+						<div class="row trending-row">
+							<div class="col-sm-6 col-md-6 col-lg-6">
+								<a href="#" class="thumbnail">
+		    						<caption>
+		    							<h3>Nowt 1</h3>
+		    							<p>nowt description</p>
+		    						</caption>
+		    					</a>
+							</div>
+							<div class="col-sm-6 col-md-6 col-lg-6">
+								<a href="#" class="thumbnail">
+		    						<caption>
+		    							<h3>Nowt 1</h3>
+		    							<p>nowt description</p>
+		    						</caption>
+		    					</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -38,13 +73,6 @@
 		    			Here are some nowts you might be interested in!
 		    			</h4>
 		    		</div>
-
-	    			<div class="container-fluid tooltips" data-toggle="tooltip" data-placement="top" title="Hide some nowts" style="text-align: center; margin-top: 2px">
-	    				<a href="#" id="hide-interests">
-	    					<span class="glyphicon glyphicon-minus"></span>
-	    				</a>
-	    			</div>
-
 		    		<div class="panel-body interests" style="padding-bottom: 0px">
 		    			<div class="row interest-row">
 		    				<div class="col-sm-4 col-md-4 col-lg-4">
@@ -73,21 +101,59 @@
 		    				</div>
 		    			</div>
 		    		</div>
-	    			<div class="container-fluid tooltips" data-toggle="tooltip" data-placement="bottom" title="Load more nowts" style="text-align: center">
-	    				<a href="#" id="load-interests">
+	    			<div class="container-fluid">
+	    				<a href="#" id="load-interests" class="load-more">
 	    					<span class="glyphicon glyphicon-plus"></span>
+	    				</a>
+
+	    				<a href="#" id="hide-interests" class="load-more">
+	    					<span class="glyphicon glyphicon-minus"></span>
 	    				</a>
 	    			</div>
 		    	</div>
 	    	</div>
 	    	<div class="row col-sm-12 col-md-12 col-lg-12">
 	    		<div class="panel panel-default">
-					<div class="panel-header">
-						<h4>Trending</h4>
+					<div class="panel-heading">
+						<h4>Your Board</h4>
 					</div>
-					<div class="panel-body">
-					trending shiett...
+					<div class="panel-body your-board">
+						<div class="row your-board-row">
+		    				<div class="col-sm-4 col-md-4 col-lg-4">
+		    					<a href="#" class="thumbnail">
+		    						<caption>
+		    							<h3>Nowt 1</h3>
+		    							<p>nowt description</p>
+		    						</caption>
+		    					</a>
+		    				</div>
+		    				<div class="col-sm-4 col-md-4 col-lg-4">
+		    					<a href="#" class="thumbnail">
+		    						<caption>
+		    							<h3>Nowt 2</h3>
+		    							<p>nowt description</p>
+		    						</caption>
+		    					</a>
+		    				</div>
+		    				<div class="col-sm-4 col-md-4 col-lg-4">
+		    					<a href="#" class="thumbnail">
+		    						<caption>
+		    							<h3>Nowt 3</h3>
+		    							<p>nowt description</p>
+		    						</caption>
+		    					</a>
+		    				</div>
+		    			</div>
 					</div>
+					<div class="container-fluid">
+	    				<a href="#" id="load-interests" class="load-more">
+	    					<span class="glyphicon glyphicon-plus"></span>
+	    				</a>
+
+	    				<a href="#" id="hide-interests" class="load-more">
+	    					<span class="glyphicon glyphicon-minus"></span>
+	    				</a>
+	    			</div>
 				</div>
 	    	</div>
 	    </div>
