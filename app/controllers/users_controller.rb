@@ -11,7 +11,11 @@ class UsersController < ApplicationController
   end
 
   def profile
-    
+    unless user_signed_in?
+      redirect_to(root_path)
+    else
+      @user = current_user
+    end
   end
 
   private
