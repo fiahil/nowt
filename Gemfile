@@ -6,6 +6,9 @@ gem 'rails', '4.0.2'
 # Authentication gems
 gem 'devise'
 
+# Omniauth
+gem 'omniauth-facebook'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 
