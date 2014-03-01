@@ -2,7 +2,11 @@
   <li><%= link_to user_omniauth_authorize_path(:facebook), {"title" => "Sign in with Facebook", "data-toogle" => "tooltip", "data-placement" => "bottom", "class" => "tooltips"} do %>
     <i class="fa fa-facebook-square fa-2x"></i>
   <% end %>
-  <li><a href="#" title="Sign in with Google+" data-toggle = "tooltip" data-placement = "bottom" class = "tooltips"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
-  <li><a href="#" title="Sign in with Twitter" data-toggle = "tooltip" data-placement = "bottom" class = "tooltips"><i class="fa fa-twitter-square fa-2x"></i></span></a></li>
+  <li><%= link_to user_omniauth_authorize_path(:twitter), {"title" => "Sign in with Twitter", "data-toogle" => "tooltip", "data-placement" => "bottom", "class" => "tooltips"} do %>
+    <i class="fa fa-twitter-square fa-2x"></i>
+  <% end %>
+  <li><%= link_to user_omniauth_authorize_path(:google), {"title" => "Sign in with Google+", "data-toogle" => "tooltip", "data-placement" => "bottom", "class" => "tooltips"} do %>
+    <i class="fa fa-google-plus-square fa-2x"></i>
+  <% end %>
 </ul>
 

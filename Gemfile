@@ -8,6 +8,7 @@ gem 'devise'
 
 # Omniauth
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
