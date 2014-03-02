@@ -1,3 +1,27 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.post:hover	 {
+	text-decoration: none;
+}
+
+.glyphicon {  margin-bottom: 10px;margin-right: 10px;}
+
+small {
+display: block;
+line-height: 1.428571429;
+color: #999;
+}
+
+p{
+font-size: 12px;
+margin: 2px;
+}
+
+h4{
+	margin: 2px;
+}
+
+.img-column {
+	padding-right:0px;
+}

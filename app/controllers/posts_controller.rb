@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
   end
-
+  
   # GET /posts/1
   def show
   end
@@ -55,4 +55,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :description)
   end
+
 end

@@ -1,31 +1,30 @@
-<h1>Listing posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Update count</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.description %></td>
-        <td><%= post.update_count %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+<!--<%= link_to 'New Post', new_post_path %> -->
+<div class="container">
+  <div class="row">
+  <% @posts.each do |post| %>
+    <%= link_to("/posts/#{post.id}", class:post) do %>
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+      <div class="well well-sm">
+        <div class="row">
+          <div class="col-sm-4 col-md-4 img-column">
+            <img src="http://placehold.it/210x240" alt="" class="img-rounded img-responsive" />
+          </div>
+          <div class="col-sm-8 col-md-8" >
+            <h4>
+              <%= post.title[0..20] %>
+            </h4>
+            <small><cite title="San Francisco, USA">gregmcox, CSULB <i class="glyphicon glyphicon-map-marker">
+            </i></cite></small>
+            <p><%= post.description[0..30] %></p>
+            <p>Tom Jewett</p>
+            <p></p>
+            <!-- Split button -->
+          </div> <!-- end text block -->
+        </div> <!-- end row-->
+      </div> <!-- end well -->
+    </div> <!-- -->
+  <% end %>
+<% end %>
+</ul>
+</div>
+</div>
