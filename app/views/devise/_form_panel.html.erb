@@ -13,11 +13,15 @@
 				<%= render(form_partial) %>
 			</div>
 			
-			<div class="login-or">
-            	<hr class="hr-or">
-            	<span class="span-or">or</span>
-          	</div>
-			<%= render :partial => 'devise/sessions/external_sign_in' %>
+			
+
+          	<% unless form_type == "Change Settings" %>
+          		<div class="login-or">
+	            	<hr class="hr-or">
+	            	<span class="span-or">or</span>
+	          	</div>
+				<%= render :partial => 'devise/sessions/external_sign_in' %>
+			<% end %>
 		</div>
 	</div>
 </div>
