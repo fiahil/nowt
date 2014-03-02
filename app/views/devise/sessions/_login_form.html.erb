@@ -1,7 +1,7 @@
 <%= form_for(resource, :as => resource_name, :url => login_path, html: {:class => 'form-signin'}, :role => "form", :id => 'login-nav') do |f| %>
 	<div class="input-group">
  		<span class="input-group-addon glyphicon glyphicon-user"></span>
- 		<%= f.email_field :email, :class => "form-control", :placeholder => "Email", :autofocus => true, :required => true %>
+ 		<%= f.text_field :login, :class => "form-control", :placeholder => "Email", :autofocus => true, :required => true %>
 	</div>
 	<div class="input-group">
   		<span class="input-group-addon glyphicon glyphicon-lock"></span>
@@ -10,7 +10,7 @@
 	<div class="checkbox">
  		<label>
  		<% if devise_mapping.rememberable? %>
- 			<div><%= f.check_box :remember_me %> Remember me</div>
+ 			<div><%= f.check_box :remember_me %>Remember me</div>
  		<% end %>
  		<label>
 	</div>

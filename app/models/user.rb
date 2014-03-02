@@ -8,8 +8,12 @@ class User < ActiveRecord::Base
     :omniauthable,
     :omniauth_providers => [:facebook, :twitter, :google_oauth2]
 
-  validates :name, uniqueness: true, presence: true
-
+  validates :name, 
+            :uniqueness => {
+              :case_sensitive => false
+            }, presence: true
+  attr_accessor :login
+  
   def self.find_for_facebook_oauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
@@ -37,6 +41,15 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
       user.name = auth.info.email
+    end
+  end
+
+  def self.find_first_by_auth_conditions(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions).where(["lower(name) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+    else
+      where(conditions).first
     end
   end
 end
