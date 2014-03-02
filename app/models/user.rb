@@ -9,11 +9,11 @@ class User < ActiveRecord::Base
     :omniauth_providers => [:facebook, :twitter, :google_oauth2]
 
   validates :name, 
-            :uniqueness => {
-              :case_sensitive => false
-            }, presence: true
+    :uniqueness => {
+    :case_sensitive => false
+  }, presence: true
   attr_accessor :login
-  
+
   def self.find_for_facebook_oauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
