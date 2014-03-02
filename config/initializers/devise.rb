@@ -262,5 +262,5 @@ Devise.setup do |config|
 
   require "omniauth-google-oauth2"
   config.omniauth :google_oauth2, "852069111640-721g0s392fodj37fkrske18k9na0k0dc.apps.googleusercontent.com", "-8u_ra5qLDZHCyy03W6AjCBy"
-    {:client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+    {:scope => 'profile, email', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
 end
