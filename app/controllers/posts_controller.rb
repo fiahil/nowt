@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy], except: [:new]
 
   # GET /posts
   def index
@@ -12,7 +12,12 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new 
-    @post = Post.new
+    if user_signed_in?
+      @post = Post.new
+    else
+      flash[:error] = "You must be registered to post a nowt!"
+      redirect_to(register_path)
+    end
   end
 
   # GET /posts/1/edit

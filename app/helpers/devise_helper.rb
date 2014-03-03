@@ -14,14 +14,10 @@ module DeviseHelper
 
     messages = errors.map { |msg| content_tag(:li, msg) }.join
 
-    sentence = I18n.t(error_key,
-      count: errors.count,
-      resource: resource.class.model_name.human.downcase)
-
     html = <<-HTML
     <div class="alert alert-danger alert-dismmissable form-errors">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <strong>#{sentence}</strong>
+      <strong>Whoops! Something wrong happened!</strong>
       <ul>
         #{messages}
       </ul>

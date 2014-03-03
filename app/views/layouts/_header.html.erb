@@ -12,9 +12,9 @@
             <%= link_to("nowt", root_path, class: 'navbar-brand') %>
           <% else %>
             <ul class="nav navbar-nav header">
-              <li><%= link_to(raw('<span class="glyphicon glyphicon-home"></span>'), profile_path, "data-toggle" => "tooltip", "data-placement" => "bottom", :title => "Home directory", :class => 'tooltips' ) %></li>
-              <li><%= link_to(raw('<span class="glyphicon glyphicon-pencil"></span>'), destroy_user_session_path, "data-toggle" => "tooltip", "data-placement" => "bottom", title: "Post a new nowt", :class => 'tooltips') %></li>
-              <li><%= link_to(raw('<span class="glyphicon glyphicon-list-alt"></span>'), board_path, "data-toggle" => "tooltip", "data-placement" => "bottom", title: "Access the nowt board", :class => 'tooltips') %></li>
+              <li><%= link_to(raw('<span class="glyphicon glyphicon-home"></span>'), profile_path, :title => "Home directory") %></li>
+              <li><%= link_to(raw('<span class="glyphicon glyphicon-pencil"></span>'), '#', "data-toggle"=>"modal", "data-target"=>"#myModal", title: "Post a nowt") %></li>
+              <li><%= link_to(raw('<span class="glyphicon glyphicon-list-alt"></span>'), board_path, title: "Access the nowt board") %></li>
             </ul>
                 
           <% end %>
@@ -53,8 +53,8 @@
     <% else %>
       
       <ul class="nav navbar-right navbar-nav">
-        <li><%= link_to(raw('<span class="glyphicon glyphicon-pushpin"><span class="visible-xs">Alerts</span></span>'), destroy_user_session_path, "data-toggle" => "tooltip", "data-placement" => "bottom", title: "Activity feed", :class => 'tooltips') %></li>
-        <li><%= link_to(raw('<span class="glyphicon glyphicon-envelope"><span class="visible-xs">Inbox</span></span>'), destroy_user_session_path, "data-toggle" => "tooltip", "data-placement" => "bottom", title: "Read your messages", :class => 'tooltips') %></li>
+        <li><%= link_to(raw('<span class="glyphicon glyphicon-pushpin"><span class="visible-xs">Alerts</span></span>'), "#", "data-toggle" => "tooltip", "data-placement" => "bottom", title: "Activity feed", :class => 'tooltips') %></li>
+        <li><%= link_to(raw('<span class="glyphicon glyphicon-envelope"><span class="visible-xs">Inbox</span></span>'), "#", "data-toggle" => "tooltip", "data-placement" => "bottom", title: "Read your messages", :class => 'tooltips') %></li>
         <li><%= link_to(raw('<span class="glyphicon glyphicon-cog"><span class="visible-xs">Settings</span></span>'), edit_path, "data-toggle" => "tooltip", "data-placement" => "bottom", title: "Change your account settings", :class => 'tooltips') %></li>
         <li><%= link_to(raw('<span class="glyphicon glyphicon-off"><span class="visible-xs">Log</span></span>'), destroy_user_session_path, :method => :delete, "data-toggle" => "tooltip", "data-placement" => "bottom", title: "Log out", :class => 'tooltips') %></li>
       </ul>
@@ -76,3 +76,5 @@
     </div><!-- /.navbar-collapse -->
   </div>
 </nav>
+
+<%= render('posts/form') %>

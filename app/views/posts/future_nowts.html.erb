@@ -1,0 +1,312 @@
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h2 class="modal-title">Post a Nowt (fill in these fields the best you can!)</h2>
+            </div>
+			<div class="modal-body">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-4"> <!-- START UPLOAD IMAGE -->
+							<div class="logowrapper">
+								<img class="logoicon" style="width:100%" src="http://placehold.it/300x300/bbb/&text=Your%20Logo" alt="App Logo"/>
+							</div>
+						</div> <!-- END UPLOAD IMAGE -->
+						<div class="col-lg-8 col-md-8 col-sm-8"> <!-- START USER FORM -->
+							<form action="" id="selectionForm" class="form-horizontal">
+								<select class="form-control" id="select" onChange="handleSelection(value)" style="margin-bottom:10px"> <!-- Select NOWT Type -->
+									<option selected>Select Nowt Type</option>
+									<option value="selectBook">Book</option>
+									<option value="selectMeet">Meet Up</option>
+									<option value="selectService">Service</option>
+									<option value="selectEvent">Event</option>
+								</select>
+							</form>	
+							
+							
+							<div style="display:none" id="selectBook"> <!-- BOOK OPTION PRESSED -->
+								<form action="" id="bookForm" class="form-horizontal">
+									<input id="bookTitleInput" class="form-control" placeholder="Title" style="margin-bottom:10px"> <!-- TITLE FIELD -->
+									<input id="bookAuthorInput" class="form-control" placeholder="Author" style="margin-bottom:10px"> <!-- AUTHOR FIELD -->	
+									<div class="row"> <!-- ISBN AND EDITION -->
+										<div class="col-lg-9 col-md-9 col-sm-9">
+											<input id="bookISBNInput" class="form-control" placeholder="ISBN" style="margin-bottom:10px;"> <!-- ISBN FIELD -->
+										</div>
+										<div class="col-lg-3 col-md-3 col-sm-3">
+											<input id="bookEditionInput" class="form-control" placeholder="Edition"> <!-- EDITION FIELD -->
+										</div>
+									</div>
+									<input id="bookClassInput" class="form-control" placeholder="Class" style="margin-bottom:10px"> <!-- CLASSNUM FIELD -->
+									<div class="row"> <!-- CONDITION AND SALE PRICE -->
+										<div class="col-lg-9 col-md-9 col-sm-9">
+											<select class="form-control" id="bookConditionInput"> <!-- SELECT CONDITION -->
+												<option selected>Condition</option>
+												<option>Excellent</option>
+												<option>Good</option>
+												<option>Fair</option>
+												<option>Poor</option>
+												<option>Bad</option>
+											</select>
+										</div>
+										<div class="col-lg-3 col-md-3 col-sm-3">
+											<input id="bookSaleInput" class="form-control" placeholder="Sale Price"><!-- SALEPRICE FIELD -->
+										</div>
+									</div>
+								</form>
+							</div>
+								
+								
+							<div style="display:none" id="selectMeet"> <!-- MEET UP OPTION PRESSED -->
+								<form action="" id="meetForm" class="form-horizontal">
+									<input type="text" class="form-control" id="meetTitleInput" placeholder="Title" style="margin-bottom:10px"> <!-- TITLE FIELD -->
+									<input type="classNum" class="form-control" id="meetClassNumInput" placeholder="Class" style="margin-bottom:10px"> <!-- CLASSNUM FIELD -->		
+									<div class="row"> <!-- Start and End Date -->
+										<div class="col-lg-6 col-md-6 col-sm-6">
+											<input type="text" class="form-control" id="meetStartDatePicker" placeholder="Start Date (MM/DD/YYYY)">
+										</div>
+										<div class="col-lg-6 col-md-6 col-sm-6">
+											<input type="text" class="form-control" id="meetEndDatePicker" placeholder="End Date (MM/DD/YYYY)">
+										</div>
+									</div>
+									<div class="row" style="padding-top:10px"> <!-- Start and End Time -->
+										<div class="col-lg-3 col-md-3 col-sm-3">
+											<select class="form-control" id="meetStartTimeInput">
+													<option selected>Start</option>
+													<option>1:00</option>
+													<option>1:15</option>
+													<option>1:30</option>
+													<option>1:45</option>
+													<option>2:00</option>
+													<option>2:15</option>
+													<option>2:30</option>
+													<option>2:45</option>												
+													<option>3:00</option>
+													<option>3:15</option>
+													<option>3:30</option>
+													<option>3:45</option>												
+													<option>4:00</option>
+													<option>4:15</option>
+													<option>4:30</option>
+													<option>4:45</option>												
+													<option>5:00</option>
+													<option>5:15</option>
+													<option>5:30</option>
+													<option>5:45</option>												
+													<option>6:00</option>
+													<option>6:15</option>
+													<option>6:30</option>
+													<option>6:45</option>												
+													<option>7:00</option>
+													<option>7:15</option>
+													<option>7:30</option>
+													<option>7:45</option>												
+													<option>8:00</option>
+													<option>8:15</option>
+													<option>8:30</option>
+													<option>8:45</option>												
+													<option>9:00</option>
+													<option>9:15</option>
+													<option>9:30</option>
+													<option>9:45</option>												
+													<option>10:00</option>
+													<option>10:15</option>
+													<option>10:30</option>
+													<option>10:45</option>												
+													<option>11:00</option>
+													<option>11:15</option>
+													<option>11:30</option>
+													<option>11:45</option>												
+													<option>12:00</option>
+													<option>12:15</option>
+													<option>12:30</option>
+													<option>12:45</option>												
+											</select>
+										</div>
+										<div class="col-lg-3 col-md-3 col-sm-3">
+											<select class="form-control" id="meetStartAMPMInput">
+													<option selected>AM/PM</option>
+													<option>AM</option>
+													<option>PM</option>		
+											</select>
+										</div>		
+										<div class="col-lg-3 col-md-3 col-sm-3">
+											<select class="form-control" id="meetEndAMPMInput">
+													<option selected>End</option>
+													<option>1:00</option>
+													<option>1:15</option>
+													<option>1:30</option>
+													<option>1:45</option>
+													<option>2:00</option>
+													<option>2:15</option>
+													<option>2:30</option>
+													<option>2:45</option>												
+													<option>3:00</option>
+													<option>3:15</option>
+													<option>3:30</option>
+													<option>3:45</option>												
+													<option>4:00</option>
+													<option>4:15</option>
+													<option>4:30</option>
+													<option>4:45</option>												
+													<option>5:00</option>
+													<option>5:15</option>
+													<option>5:30</option>
+													<option>5:45</option>												
+													<option>6:00</option>
+													<option>6:15</option>
+													<option>6:30</option>
+													<option>6:45</option>												
+													<option>7:00</option>
+													<option>7:15</option>
+													<option>7:30</option>
+													<option>7:45</option>												
+													<option>8:00</option>
+													<option>8:15</option>
+													<option>8:30</option>
+													<option>8:45</option>												
+													<option>9:00</option>
+													<option>9:15</option>
+													<option>9:30</option>
+													<option>9:45</option>												
+													<option>10:00</option>
+													<option>10:15</option>
+													<option>10:30</option>
+													<option>10:45</option>												
+													<option>11:00</option>
+													<option>11:15</option>
+													<option>11:30</option>
+													<option>11:45</option>												
+													<option>12:00</option>
+													<option>12:15</option>
+													<option>12:30</option>
+													<option>12:45</option>												
+											</select>
+										</div>
+										<div class="col-lg-3 col-md-3 col-sm-3">
+											<select class="form-control" id="meetEndAMPMInput">
+													<option selected>AM/PM</option>
+													<option>AM</option>
+													<option>PM</option>		
+											</select>
+										</div>														
+									</div>
+									<input class="form-control" id="meetLocationInput" placeholder="Location" style="margin-top:10px"> <!-- LOCATION FIELD -->
+								</form>
+							</div>
+								
+								
+							<div style="display:none" id="selectService">
+								<form action="" id="serviceForm" class="form-horizontal">
+									<input class="form-control" id="serviceTitleInput" placeholder="Title" style="margin-bottom:10px"> <!-- TITLE FIELD -->
+									<input class="form-control" id="serviceLocationInput" placeholder="Location" style="margin-bottom:10px"> <!-- LOCATION FIELD -->	
+									<div class="row"> <!-- START AND END DATE -->
+										<div class="col-lg-6 col-md-6 col-sm-6">
+											<input type="text" class="form-control" id="serviceStartDatePicker" placeholder="Start Date (MM/DD/YYYY)">
+										</div>
+										<div class="col-lg-6 col-md-6 col-sm-6">
+											<input type="text" class="form-control" id="serviceEndDatePicker" placeholder="End Date (MM/DD/YYYY)">
+										</div>
+									</div>
+									<div class="row" style="padding-top:10px">
+										<div class="col-lg-3 col-md-3 col-sm-3">
+											<input type="salePrice" class="form-control" id="serviceSaleInput" placeholder="Sale Price">
+										</div>
+									</div>
+								</form>
+							</div>
+								
+								
+							<div style="display:none" id="selectEvent">
+								<form action="" id="eventForm" class="form-horizontal">
+									<input class="form-control" id="eventTitleInput" placeholder="Title" style="margin-bottom:10px"> <!-- TITLE FIELD -->
+									<input class="form-control" id="eventLocationInput" placeholder="Location" style="margin-bottom:10px"> <!-- LOCATION FIELD -->	
+									<div class="row"> <!-- START AND END DATE -->
+										<div class="col-lg-6 col-md-6 col-sm-6">
+											<input type="text" class="form-control" id="eventStartDatePicker" placeholder="Start Date (MM/DD/YYYY)">
+										</div>
+										<div class="col-lg-6 col-md-6 col-sm-6">
+											<input type="text" class="form-control" id="eventEndDatePicker" placeholder="End Date (MM/DD/YYYY)">
+										</div>
+									</div>
+									<div class="row" style="padding-top:10px">
+										<div class="col-lg-3 col-md-3 col-sm-3">
+											<input type="salePrice" id="eventSaleInput" class="form-control" placeholder="Sale Price">
+										</div>
+									</div>
+								</form>
+							</div>
+						</div> <!-- END USER FORM -->
+					</div>
+				</div>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<form action="" id="descriptionForm" class="form-horizontal">
+								<div style="display:none" id="textdiv">
+									<textarea class="form-control" rows="4" id="descriptionInput" style="resize:none; margin-top:10px" placeholder="Description"></textarea>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>	
+				<div style="display:none" id="bottomBookBar"> <!--Book Tags and Submit-->			
+					<div class="container-fluid">
+						<div class="row" style="padding-top:10px">
+							<div class="col-lg-6 col-md-6 col-sm-6">
+								<form action="" id="bookTagsForm" class="form-horizontal">
+									<textarea class="form-control" id="bookTags" rows="2" style="resize:none;" placeholder="Smart Tags"></textarea>
+								</form>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 col-lg-offset-4 col-md-offset-4 col-sm-offset-4"  >
+								<button type="button" id="bookPostButton" style="width:100%" class="btn btn-default btn-lg">Post!</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div style="display:none" id="bottomMeetBar"> <!--Meet Up Tags and Submit-->					
+					<div class="container-fluid">
+						<div class="row" style="padding-top:10px">
+							<div class="col-lg-6 col-md-6 col-sm-6">
+								<form action="" id="meetTagsForm" class="form-horizontal">
+									<textarea class="form-control" id="meetTags" rows="2" style="resize:none;" placeholder="Smart Tags"></textarea>
+								</form>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 col-lg-offset-4 col-md-offset-4 col-sm-offset-4"  >
+								<button type="button" id="meetPostButton" style="width:100%" class="btn btn-default btn-lg">Post!</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div style="display:none" id="bottomServiceBar"> <!--Service Tags and Submit-->		 			
+					<div class="container-fluid">
+						<div class="row" style="padding-top:10px">
+							<div class="col-lg-6 col-md-6 col-sm-6">
+								<form action="" id="serviceTagsForm" class="form-horizontal">
+									<textarea class="form-control" id="serviceTags" rows="2" style="resize:none;" placeholder="Smart Tags"></textarea>
+								</form>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 col-lg-offset-4 col-md-offset-4 col-sm-offset-4"  >
+								<button type="button" id="servicePostButton" style="width:100%" class="btn btn-default btn-lg">Post!</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div style="display:none" id="bottomEventBar"> <!--Event Tags and Submit-->					
+					<div class="container-fluid">
+						<div class="row" style="padding-top:10px">
+							<div class="col-lg-6 col-md-6 col-sm-6">
+								<form action="" id="eventTagsForm" class="form-horizontal">
+									<textarea class="form-control" id="eventTags" rows="2" style="resize:none;" placeholder="Smart Tags"></textarea>
+								</form>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 col-lg-offset-4 col-md-offset-4 col-sm-offset-4"  >
+								<button type="button" id="eventPostButton" style="width:100%" class="btn btn-default btn-lg">Post!</button>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
