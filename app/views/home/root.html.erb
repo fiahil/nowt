@@ -3,9 +3,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<h1>Hello, world!</h1>
-				<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-				<p><a class="btn btn-primary btn-lg" role="button">Learn more »</a></p>
+				<h1>Note on the Wall</h1>
+				<p>Nowt is bringing students together from all over. Communicate with classmates from all sides of your campus. Join now and see what's happening! </p>
+				<p><%= link_to("Continue as a Guest »", board_path, class: "btn btn-primary btn-lg", role: "button") %></p>
 			</div>
 			<div class="col-md-4 hidden-sm hidden-xs registration_form">
 				<%= render('devise/registrations/registration_form') %>
@@ -19,17 +19,19 @@
 	<!-- Three columns of text below the carousel -->
 	<div class="row">
 		<div class="col-lg-4">
-			<img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSI+PC9yZWN0Pjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+" style="width: 140px; height: 140px;">
-			<h2>Buy or Sell Books!</h2>
-			<p>You could easily find a book
+			<span class="glyphicon glyphicon-book"></span>
+			<h2>Buy or Sell Your Books!</h2>
+			<p>Save yourself money! Stop selling your books back to the bookstore for nothing when there are students from all over looking to buy or trade for your book!
 		</div><!-- /.col-lg-4 -->
 		<div class="col-lg-4">
-			<img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSI+PC9yZWN0Pjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+" style="width: 140px; height: 140px;">
+			<span class="glyphicon glyphicon-calendar"></span>
 			<h2>Keep Up With Your Classes!</h2>
+			<p>Get updates when students are talking about your classes! Get help with homework, form study groups, and so much more!</p>
 		</div><!-- /.col-lg-4 -->
 		<div class="col-lg-4">
-			<img class="img-circle" data-src="holder.js/140x140" alt="140x140" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSI+PC9yZWN0Pjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+" style="width: 140px; height: 140px;">
-			<h2>See What's Happening On Campus!</h2>        
+			<span class="glyphicon glyphicon-comment"></span>
+			<h2>See What's Happening On Campus!</h2>
+			<p>Keep up with on and off campus activities! Find job fairs, internships, and see what everyone is talking about around campus!</p>
 		</div><!-- /.col-lg-4 -->
 	</div><!-- /.row -->
 	</div>
