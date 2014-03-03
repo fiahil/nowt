@@ -3,16 +3,12 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-# Authentication gems
-gem 'devise'
-
-# Omniauth
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 
-# Use postgresql as the database for Active Record
-gem 'pg'
+# Authentication gems
+gem 'devise'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -23,8 +19,6 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -37,11 +31,20 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use unicorn as the app server
-gem 'unicorn'
 
 # Asset pipeline for Heroku
 gem 'rails_12factor'
+
+# For Windows Platform
+gem 'sqlite3', :platform => [:mswin, :mingw]
+gem 'execjs', :platform => [:mswin, :mingw]
+
+
+# For *nix Platform
+# Use postgresql as the database for Active Record
+gem 'pg', :platform => :ruby
+gem 'therubyracer', :platform => :ruby
+gem 'unicorn', :platform => :ruby
 
 
 ruby '2.0.0'
