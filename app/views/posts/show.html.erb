@@ -15,5 +15,8 @@
   <%= @post.update_count %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
+
+<% if user_signed_in? && current_user == @post.user %>
+	<%= link_to 'Edit', edit_post_path(@post) %> |
+<% end %>
 <%= link_to 'Back', posts_path %>

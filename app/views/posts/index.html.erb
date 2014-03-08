@@ -1,4 +1,4 @@
-<!--<%= link_to 'New Post', new_post_path %> -->
+
 <div class="container">
   <div class="row">
   <% @posts.each do |post| %>
@@ -13,7 +13,7 @@
             <h4>
               <%= post.title[0..20] %>
             </h4>
-            <small><cite title="San Francisco, USA">username, SCHOOL <i class="glyphicon glyphicon-map-marker">
+            <small><cite title="San Francisco, USA"><%= post.user.name %>, SCHOOL <i class="glyphicon glyphicon-map-marker">
             </i></cite></small>
             <p><%= post.description[0..30] %></p>
             <p> this is where the description of the post will go </p>
