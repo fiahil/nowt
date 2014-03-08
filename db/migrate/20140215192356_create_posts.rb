@@ -4,6 +4,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.integer :update_count
+      t.belongs_to :user
 
       t.timestamps
     end
