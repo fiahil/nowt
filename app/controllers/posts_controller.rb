@@ -10,28 +10,22 @@ class PostsController < ApplicationController
   def show
   end
 
-  # GET /posts/new
-  def new 
-    if user_signed_in?
-      @post = Post.new
-    else
-      flash[:error] = "You must be registered to post a nowt!"
-      redirect_to(register_path)
-    end
-  end
-
   # GET /posts/1/edit
   def edit
+    if @post.user != current_user
+      redirect_to @post, notice: "You do not have permission to edit this nowt!"
+    end
   end
 
   # POST /posts
   def create
     @post = Post.new(post_params)
 
+    @post.user = current_user
     if @post.save
       redirect_to @post, notice: 'Post was successfully created.'
     else
-      render action: 'new'
+      redirect_to '/profile', notice: "Whoops, something happened!"
     end
   end
 
