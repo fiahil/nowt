@@ -16,10 +16,11 @@ Nowt::Application.routes.draw do
 
   devise_for :users, controllers: {registrations: 'registrations', :omniauth_callbacks => 'omniauth_callbacks'}
 
-  resources :posts 
-  get '/posts/new', to: "posts#new"
+   
+
 
   get '/board', to: "posts#index", as: "board"
+  resources :posts
 
   resources :users, only: [:show, :index]
 end
