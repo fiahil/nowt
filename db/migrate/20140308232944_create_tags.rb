@@ -13,6 +13,6 @@ class CreateTags < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_column :posts, :user_id, :integer
+
   end
 end
