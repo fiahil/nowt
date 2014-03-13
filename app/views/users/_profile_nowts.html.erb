@@ -1,0 +1,27 @@
+<div class="row col-sm-12 col-md-12 col-lg-12">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4><%= title %></h4>
+		</div>
+		<div class="panel-body <%= class_name %>">
+			<div class="row <%= class_name %>-row">
+				 <% posts.each do |post| %>
+			      <%= link_to("/posts/#{post.id}", class:post) do %>
+			        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			          <%= render 'posts/nowt', :post => post %>
+			        </div> <!-- -->
+			      <% end %>
+			    <% end %>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<a id="load-<%= class_name %>" class="load-more">
+				<span class="glyphicon glyphicon-plus"></span>
+			</a>
+
+			<a id="hide-<%= class_name %>" class="load-more">
+				<span class="glyphicon glyphicon-minus"></span>
+			</a>
+		</div>
+	</div>
+</div>

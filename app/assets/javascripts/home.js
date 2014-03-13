@@ -102,7 +102,7 @@ $(function(){
 
 
 
-	$('#load-interests').click(function(){
+	$('#load-interest').click(function(){
 		var row = '<div class="row interest-row" style="display:none"> \
 				<div class="col-sm-4 col-md-4 col-lg-4"> \
 					<a href="#" class="thumbnail"> \
@@ -129,19 +129,19 @@ $(function(){
 					</a> \
 				</div> \
 			</div>'; 
-		var count = $(".interests > div").length;
+		var count = $(".interest > div").length;
 		if(count < 3) {
 			$('html, body').animate({
 		        scrollTop: $(".interest-row:last-child").offset().top
 		    }, 500);
 
-			$(row).appendTo($('.interests'));
+			$(row).appendTo($('.interest'));
 			$(".interest-row:last-child").stop().slideDown('slow');
 		}
 	});
 
-	$('#hide-interests').click(function(){
-		var count = $(".interests > div").length;
+	$('#hide-interest').click(function(){
+		var count = $(".interest > div").length;
 		if(count > 1) {
 			$('html, body').animate({
 		        scrollTop: $(".interest-row:nth-last-child(2)").offset().top

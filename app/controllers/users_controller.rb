@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   def index
@@ -14,7 +13,11 @@ class UsersController < ApplicationController
     unless user_signed_in?
       redirect_to(root_path)
     else
+      
       @user = current_user
+      @your_nowts = Post.where(user_id: current_user)
+      @interests = Post.all
+      @trending = Post.all
     end
   end
 
@@ -28,4 +31,5 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email)
     end
+
 end
