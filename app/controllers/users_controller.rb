@@ -15,9 +15,9 @@ class UsersController < ApplicationController
     else
       
       @user = current_user
-      @your_nowts = Post.where(user_id: current_user)
-      @interests = Post.all
-      @trending = Post.all
+      @your_nowts = Post.where(user_id: current_user).limit(16)
+      @interests = Post.all.limit(16)
+      @trending = Post.all.limit(16)
     end
   end
 
