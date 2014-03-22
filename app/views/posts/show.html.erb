@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Title:</strong>
@@ -19,4 +19,55 @@
 <% if user_signed_in? && current_user == @post.user %>
 	<%= link_to 'Edit', edit_post_path(@post) %> |
 <% end %>
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Back', posts_path %> -->
+
+		<div class="container-fluid" style="padding-left:5%; padding-right:5%; padding-bottom:5%; background:#eee">
+			<div class="row" style="padding-top:1%; padding-bottom:1%">
+				<div class="col-lg-8 col-md-8 col-sm-8" style="background:white; outline: black solid thin">
+					<div class="col-lg-4 col-md-4 col-sm-4" style="padding-top:2%;">
+						<div class="logowrapper">
+							<img class="logoicon" width="100%" src="http://placehold.it/300x300/bbb/&text=Your%20Logo" alt="App Logo"/>
+						</div>
+					</div>
+					<div class="col-lg-8 col-md-8 col-sm-8" style="padding-bottom:2%">
+						<h1><%= @post.title %><small>username, CSULB (1/25/2014)</small></h1><br>
+						<h4>Author: </h4>
+						<h4>Class: </h4>
+						<h4>Price: </h4>
+						<h4>Description: <%= @post.description %></h4>
+						
+						
+					</div>
+
+					<div style="padding-left: 15px; padding-right: 15px; padding-bottom: 50px; padding-top:375px;  border-bottom: 1px solid#888">
+						<button type="submit" style="float:right" class="btn btn-default">Write a Nowt Back!</button>					
+					</div>
+					
+					<div style="padding-left: 15px; padding-right: 15px; padding-bottom:10%;">
+						<h1>Comments</h1>
+						<p>gregCox (date posted, link to profile)</p>
+						<p>i really need to work on this (comment)</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-md-offset-1 col-lg-offset-1 col-sm-offset-1" style=" background:white;  outline: black solid thin">	
+					<h1>Related Nowts</h1>
+					<a href="#" class="thumbnail">
+						<h3>Nowt 1</h3>
+		    			<p>nowt description</p>
+					</a>
+					<a href="#" class="thumbnail">
+						<h3>Nowt 2</h3>
+		    			<p>nowt description</p>
+					</a>
+					<a href="#" class="thumbnail">
+						<h3>Nowt 3</h3>
+		    			<p>nowt description</p>
+					</a>
+					<a href="#" class="thumbnail">
+						<h3>Nowt 4</h3>
+		    			<p>nowt description</p>
+					</a>				
+				</div>
+			</div>
+		</div>	
+
