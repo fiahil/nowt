@@ -146,3 +146,23 @@ li .glyphicon {
     padding-right: 0;
     padding-left: 0;
 }
+
+.panel-body-edit {
+  padding: 0px;
+}
+
+.panel-body-edit table tr td {
+  padding-left: 15px;
+}
+
+.panel-body-edit .table {
+  margin-bottom: 0px;
+}
+
+.panel-body-edit .glyphicon, .panel-title .glyphicon {
+  margin-right: 10px;
+}
+
+.panel-body-edit a:hover, .panel-title a:hover {
+  text-decoration: none;
+}
