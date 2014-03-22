@@ -1,0 +1,126 @@
+<% content_for :content do %>
+	
+	<div class="container">
+	  <div class="row">
+	          <div class="col-sm-3 col-md-3 col-lg-3">
+	              <div class="panel-group" id="accordion">
+	                  <div class="panel panel-default">
+	                      <div class="panel-heading">
+	                          <h4 class="panel-title">
+	                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-cog">
+	                              </span>Account</a>
+	                          </h4>
+	                      </div>
+	                      <div id="collapseOne" class="panel-collapse collapse in">
+	                          <div class="panel-body-edit">
+	                              <table class="table">
+	                                  <tr>
+	                                      <td>
+	                                          <span class="glyphicon glyphicon-envelope text-success"></span><a href="#">Change Email</a>
+	                                      </td>
+	                                  </tr>
+	                                  <tr>
+	                                      <td>
+	                                          <span class="glyphicon glyphicon-lock text-success"></span><a href="#">Change Password</a>
+	                                      </td>
+	                                  </tr>
+	                                  <tr>
+	                                      <td>
+	                                          <span class="glyphicon glyphicon-trash text-danger"></span><a href="#" class="text-danger">Delete Account</a>
+	                                      </td>
+	                                  </tr>
+	                              </table>
+	                          </div>
+	                      </div>
+	                  </div>
+	                  <div class="panel panel-default">
+	                      <div class="panel-heading">
+	                          <h4 class="panel-title">
+	                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-user">
+	                              </span>Profile</a>
+	                          </h4>
+	                      </div>
+	                      <div id="collapseTwo" class="panel-collapse collapse">
+	                          <div class="panel-body-edit">
+	                              <table class="table">
+	                                  <tr>
+	                                      <td>
+	                                          <span class="glyphicon glyphicon-camera text-success"></span><a href="#">Change Picture</a>
+	                                      </td>
+	                                  </tr>
+	                                  <tr>
+	                                      <td>
+	                                          <span class="glyphicon glyphicon-edit text-success"></span><a href="#">Change Username</a>
+	                                      </td>
+	                                  </tr>
+	                                  <tr>
+	                                      <td>
+	                                          <span class="glyphicon glyphicon-briefcase text-success"></span><a href="#">Edit School Info</a>
+	                                      </td>
+	                                  </tr>
+	                                  <tr>
+	                                      <td>
+	                                          <span class="glyphicon glyphicon-tags text-success"></span><a href="#">Manage Smart Tags</a>
+	                                      </td>
+	                                  </tr>
+	                              </table>
+	                          </div>
+	                      </div>
+	                  </div>
+	                  <div class="panel panel-default">
+	                      <div class="panel-heading">
+	                          <h4 class="panel-title">
+	                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-flag">
+	                              </span>Nowtifications</a>
+	                          </h4>
+	                      </div>
+	                      <div id="collapseThree" class="panel-collapse collapse">
+	                          <div class="panel-body-edut">
+	                              <table class="table">
+	                                  <tr>
+	                                      <td>
+	                                          <span class="glyphicon glyphicon-bullhorn text-success"></span><a href="#">Manage Alerts</a>
+	                                      </td>
+	                                  </tr>
+	                              </table>
+	                          </div>
+	                      </div>
+	                  </div>
+	                  <div class="panel panel-default">
+	                      <div class="panel-heading">
+	                          <h4 class="panel-title">
+	                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><span class="glyphicon glyphicon-eye-close">
+	                              </span>Privacy & Security</a>
+	                          </h4>
+	                      </div>
+	                      <div id="collapseFour" class="panel-collapse collapse">
+	                          <div class="panel-body-edit">
+	                              <table class="table">
+	                                  <tr>
+	                                      <td>
+	                                          <span class="glyphicon glyphicon-search"></span><a href="http://www.jquery2dotnet.com">Account Visibility</a>
+	                                      </td>
+	                                  </tr>
+	                                  <tr>
+	                                      <td>
+	                                          <span class="glyphicon glyphicon-ok"></span><a href="http://www.jquery2dotnet.com">Login Verification</a>
+	                                      </td>
+	                                  </tr>
+	                                  <tr>
+	                                      <td>
+	                                          <span class="glyphicon glyphicon-log-in"></span><a href="http://www.jquery2dotnet.com">Automatic Login</a>
+	                                      </td>
+	                                  </tr>
+	                              </table>
+	                          </div>
+	                      </div>
+	                  </div>
+	              </div>
+	          </div>
+	          <div class="col-sm-9 col-md-9 col-lg-9"><%= yield %></div>
+	      </div>
+	  </div>
+	</div>
+<% end %>
+
+<%= render template: "layouts/application" %>
