@@ -104,7 +104,7 @@ li .glyphicon {
   border-radius: 23px 23px 23px 23px;
   height: 40px;
   width : 40px;
-  margin-top: 30px;
+  margin-top: 34px;
 }
 /* Next button  */
 .media-carousel .carousel-control.right 
@@ -116,7 +116,7 @@ li .glyphicon {
   border-radius: 23px 23px 23px 23px;
   height: 40px;
   width : 40px;
-  margin-top: 30px;
+  margin-top: 34px;
 }
 /* Changes the position of the indicators */
 .media-carousel .carousel-indicators 
@@ -165,4 +165,8 @@ li .glyphicon {
 
 .panel-body-edit a:hover, .panel-title a:hover {
   text-decoration: none;
+}
+
+.panel-right {
+  height: 260px;
 }

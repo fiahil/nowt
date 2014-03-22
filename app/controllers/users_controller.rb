@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   # GET /users/1
   def show
   end
-
+  
   def profile
     unless user_signed_in?
       redirect_to(root_path)
