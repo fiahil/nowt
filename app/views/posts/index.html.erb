@@ -1,4 +1,9 @@
 <div class="container">
+  <ol class="breadcrumb" id="board-breadcrumb">
+    <li>CSULB</li>
+    <li>CECS</li>
+    <li class="active">492</li>
+  </ol>
   <div class="row">
     <% @posts.each do |post| %>
       <%= link_to("/posts/#{post.id}", class:post) do %>
@@ -8,4 +13,28 @@
       <% end %>
     <% end %>
   </div>
+  <span class="label label-primary">Books</span>
+  <hr id="divider-break">
+  <div class="row">
+    <% @posts.each do |post| %>
+      <%= link_to("/posts/#{post.id}", class:post) do %>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+          <%= render 'posts/nowt', :post => post %>
+        </div> <!-- -->
+      <% end %>
+    <% end %>
+  </div>
+  <span class="label label-warning">Services</span>
+  <hr id="divider-break">
+  <div class="row">
+    <% @posts.each do |post| %>
+      <%= link_to("/posts/#{post.id}", class:post) do %>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+          <%= render 'posts/nowt', :post => post %>
+        </div> <!-- -->
+      <% end %>
+    <% end %>
+  </div>
+  <span class="label label-success">Events</span>
+  <hr>
 </div>
