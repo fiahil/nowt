@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
   attr_accessor :login
 
   has_many :posts
+  has_many :tags, through: :user_tag
+
 
   def self.find_for_facebook_oauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
