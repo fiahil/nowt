@@ -1,0 +1,180 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.form-signin {
+	max-width: 330px;
+	margin: 0 auto;
+}
+
+.form-panel, .form-errors {
+	max-width: 500px;
+	margin: 0 auto;
+	margin-bottom: 5px;
+}
+	
+.form-panel-body{
+	padding-top: 50px;
+}
+
+li .glyphicon {
+	font-size: 1.4em;
+} 
+
+.nowt
+{
+    /*box-shadow:0px 0px 4px -2px #000;*/
+    padding: 20px 5px 20px 20px;
+    padding-bottom: 20px;
+
+}
+
+.nowt-img {
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.nowt-header {
+	font-weight:bold;
+}
+
+.nowt-footer {
+	font-weight:bold;
+}
+
+.dp
+{
+    border:10px solid #eee;
+    transition: all 0.2s ease-in-out;
+}
+.dp:hover
+{
+    border:2px solid #eee;
+    transform:rotate(360deg);
+    -ms-transform:rotate(360deg);  
+    -webkit-transform:rotate(360deg);  
+    /*-webkit-font-smoothing:antialiased;*/
+}
+
+.label-st a{
+    color: white;
+}
+
+.label-st:hover {
+    background-color: #00ABA9;
+}
+
+.label-st a:hover {
+    text-decoration: none;
+}
+
+.thumbnail:hover {
+    text-decoration: none;
+}
+
+#hide-interests {
+    margin-left: -3px;
+}
+
+.load-more {
+    cursor: pointer;
+}
+
+.load-more:hover {
+    text-decoration: none;
+}
+
+.trending, .your-board, .interests {
+    padding-bottom: 0px;
+}
+
+.change-password {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* carousel */
+.media-carousel 
+{
+  margin-bottom: 0;
+  padding: 0 40px 30px 40px;
+  margin-top: 30px;
+}
+/* Previous button  */
+.media-carousel .carousel-control.left 
+{
+  left: -12px;
+  background-image: none;
+  background: none repeat scroll 0 0 #222222;
+  border: 4px solid #FFFFFF;
+  border-radius: 23px 23px 23px 23px;
+  height: 40px;
+  width : 40px;
+  margin-top: 34px;
+}
+/* Next button  */
+.media-carousel .carousel-control.right 
+{
+  right: -12px !important;
+  background-image: none;
+  background: none repeat scroll 0 0 #222222;
+  border: 4px solid #FFFFFF;
+  border-radius: 23px 23px 23px 23px;
+  height: 40px;
+  width : 40px;
+  margin-top: 34px;
+}
+/* Changes the position of the indicators */
+.media-carousel .carousel-indicators 
+{
+  right: 50%;
+  top: auto;
+  bottom: 0px;
+  margin-right: -19px;
+}
+/* Changes the colour of the indicators */
+.media-carousel .carousel-indicators li 
+{
+  background: #c0c0c0;
+}
+.media-carousel .carousel-indicators .active 
+{
+  background: #333333;
+}
+.media-carousel img
+{
+  width: 100px;
+  height: 100px
+}
+/* End carousel */
+
+.nowt-panels {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.panel-body-edit {
+  padding: 0px;
+}
+
+.panel-body-edit table tr td {
+  padding-left: 15px;
+}
+
+.panel-body-edit .table {
+  margin-bottom: 0px;
+}
+
+.panel-body-edit .glyphicon, .panel-title .glyphicon {
+  margin-right: 10px;
+}
+
+.panel-body-edit a:hover, .panel-title a:hover {
+  text-decoration: none;
+}
+
+.panel-right {
+  height: 260px;
+}
