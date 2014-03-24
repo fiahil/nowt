@@ -16,6 +16,9 @@ class User < ActiveRecord::Base
 
   has_many :posts
   has_many :tags, through: :user_tag
+  has_many :user_tag
+
+  attr_reader :tag_tokens
 
 
   def self.find_for_facebook_oauth(auth)
