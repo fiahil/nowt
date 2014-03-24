@@ -3,7 +3,7 @@ Nowt::Application.routes.draw do
 
   root 'home#index'
 
-
+  get '/tasks', to: "tasks#index", as: "tasks"
 
   devise_scope :user do
     get "/login" => "devise/sessions#new"
@@ -25,4 +25,6 @@ Nowt::Application.routes.draw do
   resources :posts
 
   resources :users, only: [:show, :index]
+
+  get '/search', to: "tasks#live_search"
 end
