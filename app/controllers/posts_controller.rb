@@ -3,7 +3,14 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all
+    userInput = params[:q]
+
+    if(userInput != "") 
+      @posts = Post.where("title ilike ? or description ilike ?", "%#{params[:q]}%", "%#{params[:q]}%")
+    else 
+      @posts = Post.all
+    end
+
   end
   
   # GET /posts/1
