@@ -5,11 +5,18 @@
     <li class="active">492</li>
   </ol>
   <div class="row">
-    <% @posts.each do |post| %>
-      <%= link_to("/posts/#{post.id}", class:post) do %>
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-          <%= render 'posts/nowt', :post => post %>
-        </div> <!-- -->
+    <% if(@posts.empty?) %>
+      <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>Warning!</strong> Nothing Found :[
+      </div>
+    <% else %>
+      <% @posts.each do |post| %>
+        <%= link_to("/posts/#{post.id}", class:post) do %>
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            <%= render 'posts/nowt', :post => post %>
+          </div> <!-- -->
+        <% end %>
       <% end %>
     <% end %>
   </div>
