@@ -23,7 +23,7 @@ li .glyphicon {
 	font-size: 1.4em;
 } 
 
-.profile
+.nowt
 {
     /*box-shadow:0px 0px 4px -2px #000;*/
     padding: 20px 5px 20px 20px;
@@ -31,9 +31,17 @@ li .glyphicon {
 
 }
 
-.profile-img {
+.nowt-img {
     margin-right: 15px;
     margin-bottom: 15px;
+}
+
+.nowt-header {
+	font-weight:bold;
+}
+
+.nowt-footer {
+	font-weight:bold;
 }
 
 .dp
@@ -142,7 +150,7 @@ li .glyphicon {
 }
 /* End carousel */
 
-.profile-panels {
+.nowt-panels {
     padding-right: 0;
     padding-left: 0;
 }

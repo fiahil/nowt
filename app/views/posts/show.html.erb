@@ -19,7 +19,7 @@
 <% if user_signed_in? && current_user == @post.user %>
 	<%= link_to 'Edit', edit_post_path(@post) %> |
 <% end %>
-<%= link_to 'Back', posts_path %> -->
+<%= link_to 'Back', posts_path %> 
 
 		<div class="container-fluid" style="padding-left:5%; padding-right:5%; padding-bottom:5%; background:#eee">
 			<div class="row" style="padding-top:1%; padding-bottom:1%">
@@ -71,3 +71,64 @@
 			</div>
 		</div>	
 
+-->
+<div class="container">
+	<div class="row">
+		<div class="col-sm-8 col-md-8 col-lg-8 nowt-panels">
+			<div class="row col-sm-12 col-md-12 col-lg-12">
+					<div class="nowt panel panel-default">
+						
+							<img class="pull-left nowt-img" src="http://placehold.it/300x300/bbb/&text=Your%20Logo" width="300px" height="300px" alt="App Logo"/>
+						
+						<div class="nowt-body">
+							<div class="nowt-header">
+								<h3> <%= @post.title %> </h3>	
+							</div>
+							<h4>Author: </h4>
+							<h4>Class: </h4>
+							<h4>Price: </h4>
+							<h4>Description: <%= @post.description %>asdasdsadsadsadsadsadsadsadsasadsa</h4>
+							<br><br><br><br><br><br><br><br>
+							<div class="nowt-footer">
+								<hr style="margin:8px auto">
+								Contact Information: ASd
+							</div>
+		    			</div>
+		    		</div>
+			 </div>
+
+			<div class="row col-sm-12 col-md-12 col-lg-12">
+				<div class="nowt panel panel-default">
+					<h3>Comments</h3>
+						<p>gregCox</p>
+						<p>i really need to work on this (comment)</p>
+				</div>
+			</div>
+
+		</div>
+
+
+
+	    <div class="col-sm-4 col-md-4 col-lg-4 nowt-panels">
+	    	<div class="nowt panel panel-default">
+	    		<h3>Related Nowts</h3>
+					<a href="#" class="thumbnail">
+						<h3>Nowt 1</h3>
+		    			<p>nowt description</p>
+					</a>
+					<a href="#" class="thumbnail">
+						<h3>Nowt 2</h3>
+		    			<p>nowt description</p>
+					</a>
+					<a href="#" class="thumbnail">
+						<h3>Nowt 3</h3>
+		    			<p>nowt description</p>
+					</a>
+					<a href="#" class="thumbnail">
+						<h3>Nowt 4</h3>
+		    			<p>nowt description</p>
+					</a>				
+	    	</div>
+		</div>
+	</div>
+</div>
