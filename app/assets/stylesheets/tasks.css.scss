@@ -1,3 +1,18 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.dropdown-live {
+	background-color: rgba(255,255,255,0.95);
+	width: 272px;
+	margin-top: -7px;
+	margin-left: 17px;
+	-moz-box-shadow:    2px 1px 6px 2px #ccc;
+  	-webkit-box-shadow: 2px 1px 6px 2px #ccc;
+  	box-shadow:         2px 1px 6px 2px #ccc;
+}
+
+ul {
+    list-style-type: none;
+}
+
+

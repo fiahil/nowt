@@ -1,19 +1,13 @@
 class TasksController < ApplicationController
 	
 	def live_search
-	  
-
-	  input = params[:q]
-
-	  #get input, check for empty 
-	  if(input != "")
-	  	@tasks = Tag.where("label ilike ? or description ilike ?", "%#{params[:q]}%", "%#{params[:q]}%").limit(15)
-	  else
-	  	@tasks = Tag.where("label like 'NOTHING'")
-	  end
-
+	  @tasks = Tag.where("label ilike ? or description ilike ?", "%#{params[:q]}%", "%#{params[:q]}%").limit(15)
 	  render :layout => false
+	end
 
+	#if empty
+	def empty_search
+		render :layout => false
 	end
 
 end
