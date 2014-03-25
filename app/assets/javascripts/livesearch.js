@@ -17,7 +17,6 @@ $( document ).ready(function(){
 
 				var form = $("#live-search-form"); // grab the form wrapping the search bar.
 
-<<<<<<< HEAD
 				var url = "/emptySearch"; // live_search action.   
 				var formData = form.serialize(); // grab the data in the form   
 				$.get(url, formData, function(html) { // perform an AJAX get
@@ -27,10 +26,6 @@ $( document ).ready(function(){
 				});
 			}
 		}); 
-=======
-	}); 
-
-
     $("#user_tag_tokens").tokenInput("/tags.json", {
     	crossDomain: false,
     	prePopulate: $("#user_tag_tokens").data('pre'),
@@ -38,7 +33,5 @@ $( document ).ready(function(){
     	preventDuplicates: true
 
     });
-					
->>>>>>> 316bea4d166cdd5e8486b176d718b1ce3e287ef5
 	
 });

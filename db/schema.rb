@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140324110944) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "post_tags", force: true do |t|
     t.integer  "tag_id"
     t.integer  "post_id"
@@ -23,10 +26,10 @@ ActiveRecord::Schema.define(version: 20140324110944) do
   create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "update_count", default: 0, null: false
+    t.integer  "user_id"
   end
 
   create_table "tags", force: true do |t|
@@ -36,8 +39,8 @@ ActiveRecord::Schema.define(version: 20140324110944) do
     t.string   "description"
   end
 
-  add_index "tags", ["description"], name: "index_tags_on_description"
-  add_index "tags", ["name"], name: "index_tags_on_name"
+  add_index "tags", ["description"], name: "index_tags_on_description", using: :btree
+  add_index "tags", ["name"], name: "index_tags_on_name", using: :btree
 
   create_table "user_tags", force: true do |t|
     t.integer  "user_id"
@@ -46,7 +49,8 @@ ActiveRecord::Schema.define(version: 20140324110944) do
     t.datetime "updated_at"
   end
 
-  add_index "user_tags", ["user_id", "tag_id"], name: "index_user_tags_on_user_id_and_tag_id"
+  add_index "user_tags", ["tag_id"], name: "index_user_tags_on_tag_id", using: :btree
+  add_index "user_tags", ["user_id"], name: "index_user_tags_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -66,7 +70,7 @@ ActiveRecord::Schema.define(version: 20140324110944) do
     t.string   "uid"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
