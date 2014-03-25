@@ -34,4 +34,5 @@ Nowt::Application.routes.draw do
   resources :users, only: [:show, :index]
 
   get '/search', to: "tasks#live_search"
+  get '/emptySearch', to: "tasks#empty_search"
 end
