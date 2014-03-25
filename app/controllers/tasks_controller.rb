@@ -1,8 +1,6 @@
 class TasksController < ApplicationController
 	
 	def live_search
-	  
-
 	  input = params[:q]
 
 	  #get input, check for empty 
