@@ -20,6 +20,9 @@ class User < ActiveRecord::Base
 
   attr_reader :tag_tokens
 
+  def tag_tokens=(ids)
+    self.tag_ids = ids.split(",")
+  end
 
   def self.find_for_facebook_oauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|

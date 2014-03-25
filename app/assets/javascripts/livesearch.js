@@ -20,7 +20,10 @@ $( document ).ready(function(){
 
     $("#user_tag_tokens").tokenInput("/tags.json", {
     	crossDomain: false,
-    	prePopulate: $("#user_tag_tokens").data('pre')
+    	prePopulate: $("#user_tag_tokens").data('pre'),
+    	theme: "facebook",
+    	preventDuplicates: true
+
     });
 					
 	

@@ -7,9 +7,9 @@ class TasksController < ApplicationController
 
 	  #get input, check for empty 
 	  if(input != "")
-	  	@tasks = Tag.where("label ilike ? or description ilike ?", "%#{params[:q]}%", "%#{params[:q]}%").limit(15)
+	  	@tasks = Tag.where("name ilike ? or description ilike ?", "%#{params[:q]}%", "%#{params[:q]}%").limit(15)
 	  else
-	  	@tasks = Tag.where("label like 'NOTHING'")
+	  	@tasks = Tag.where("name like 'NOTHING'")
 	  end
 
 	  render :layout => false

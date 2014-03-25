@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :pre_edit, only: [:edit, :edit_name, :edit_password, :edit_email]
+  before_action :authenticate
   layout :resolve_template
   # GET /users
   def index
@@ -24,6 +25,14 @@ class UsersController < ApplicationController
 
   def edit_email
 
+  end
+
+  def update_tags
+    @user = User.find(current_user.id)
+    unless @user.update_attributes(user_params)
+      flash[:error] = "Smart tags were not saved properly. Try again!"
+    end
+    redirect_to(root_path)
   end
   
   def update
@@ -54,18 +63,20 @@ class UsersController < ApplicationController
 
   
   def profile
-    unless user_signed_in?
-      redirect_to(root_path)
-    else
-      
       @user = current_user
       @your_nowts = Post.where(user_id: current_user).limit(16)
       @interests = Post.all.limit(16)
       @trending = Post.all.limit(16)
-    end
   end
 
   private
+
+    def authenticate
+      unless user_signed_in?
+        redirect_to(root_path)
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
@@ -73,7 +84,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email,:password, :password_confirmation, :current_password)
+      params.require(:user).permit(:name, :email,:password, :password_confirmation, :current_password, :tag_tokens)
     end
 
     def pre_edit

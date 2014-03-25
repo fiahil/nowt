@@ -11,12 +11,14 @@
 		                <h4 class="media-heading"><%= @user.name %></h4>
 		                <h5>California State University, Long Beach</h5>
 		                <hr style="margin:8px auto">
-		                <%= form_for(@user) do |f| %>
-		                	<%= f.label :tag_tokens, "Smart Tags" %><br />
-		                	<%= f.text_field :tag_tokens, "data-pre" => @user.tags.map(&:attributes).to_json %>
-	                		<%= f.submit "Subscribe" %>
-                		<% end %>
+		                <%= form_for(@user, as: :user, url: update_tag_path(@user), method: :patch) do |f| %>
+  							<div class="input-group">
+  								<span class="input-group-addon glyphicon glyphicon-tags"></span>
+		                		<%= f.text_field :tag_tokens, "data-pre" => @user.tags.map(&:attributes).to_json, class: 'form-control' %>
+	                		</div>
 
+	                		<%= f.submit "Subscribe", class: "btn btn-primary", id: "loginsubmit" %>
+                		<% end %>
 
 		            </div>
 		    	</div>
