@@ -36,13 +36,13 @@ end
 gem 'rails_12factor'
 
 # For Windows Platform
-gem 'sqlite3', :platform => [:mswin, :mingw]
+
 gem 'execjs', :platform => [:mswin, :mingw]
 
 
 # For *nix Platform
 # Use postgresql as the database for Active Record
-gem 'pg', :platform => :ruby
+gem 'pg'
 gem 'therubyracer', :platform => :ruby
 gem 'unicorn', :platform => :ruby
 
