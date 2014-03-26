@@ -30,8 +30,10 @@
                                 <% post_counter += 1 %>
                             <% end %>
                         </div>
+                        <% unless posts.empty? %>
                         <a data-slide="prev" href="#<%= class_name %>-carousel" class="left carousel-control">‹</a>
                         <a data-slide="next" href="#<%= class_name %>-carousel" class="right carousel-control">›</a>
+                        <% end %>
                     </div>                          
                 </div>
             </div>
