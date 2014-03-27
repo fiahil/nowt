@@ -43,7 +43,7 @@ module DeviseHelper
     messages = errors.map { |msg| content_tag(:li, msg) }.join
 
     html = <<-HTML
-    <div class="alert alert-success alert-dismmissable form-errors">
+    <div class="alert alert-success alert-dismmissable form-errors" style="margin-bottom: 20px">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <strong>Successful!</strong>
       <ul>
