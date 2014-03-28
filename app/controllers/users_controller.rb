@@ -65,7 +65,8 @@ class UsersController < ApplicationController
   def profile
       @user = current_user
       @your_nowts = Post.where(user_id: current_user).limit(16)
-      @interests = Post.all.limit(16)
+      tags = @user.tags
+      @interests = find_interests
       @trending = Post.all.limit(16)
   end
 
@@ -98,6 +99,20 @@ class UsersController < ApplicationController
       else
         "application"
       end
+    end
+
+    def find_interests
+      post_ids = []
+      current_user.tags.each do |tag|
+        query = PostTag.where(tag_id: tag)
+
+        unless query.blank?
+          post_ids = post_ids + query.map {|x| x.post_id}
+        end
+      end
+
+      return Post.find_all_by_id(post_ids)
+
     end
 
 end

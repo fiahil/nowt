@@ -74,6 +74,11 @@
 -->
 <div class="container">
 	<div class="row">
+	
+		<% if user_signed_in? && current_user == @post.user %>
+			<%= link_to 'Edit', edit_post_path(@post) %> |
+		<% end %>
+		<%= link_to 'Back', posts_path %> 
 		<div class="col-sm-8 col-md-8 col-lg-8 nowt-panels">
 			<div class="row col-sm-12 col-md-12 col-lg-12">
 					<div class="nowt panel panel-default">
@@ -100,8 +105,15 @@
 			<div class="row col-sm-12 col-md-12 col-lg-12">
 				<div class="nowt panel panel-default">
 					<h3>Comments</h3>
-						<p>gregCox</p>
-						<p>i really need to work on this (comment)</p>
+					<p>gregCox</p>
+					<p>i really need to work on this (comment)</p>
+					<hr />
+					<h4>Smart Tags</h4>
+					<%= form_for(@post, as: :post, url: "/posts/#{@post.id}" , method: :patch) do |f| %>
+		
+							<%= f.text_field :tag_tokens, "data-pre" => @post.tags.map(&:attributes).to_json, class: 'form-control', disabled: true %>
+					<% end %>
+
 				</div>
 			</div>
 
