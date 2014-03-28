@@ -65,7 +65,6 @@ class UsersController < ApplicationController
   def profile
       @user = current_user
       @your_nowts = Post.where(user_id: current_user).limit(16)
-      tags = @user.tags
       @interests = find_interests
       @trending = Post.all.limit(16)
   end
