@@ -47,7 +47,7 @@
       <% else %>
       
       <ul class="nav navbar-right navbar-nav">
-        <li><%= link_to(raw('<span class="glyphicon glyphicon-pushpin"><span class="visible-xs">Alerts</span></span>'), "#", "data-toggle" => "tooltip", "data-placement" => "bottom", title: "Activity feed", :class => 'tooltips') %></li>
+        <li><%= link_to(raw('<span class="glyphicon glyphicon-pushpin"><span class="visible-xs">Alerts</span></span>'), activities_path, "data-toggle" => "tooltip", "data-placement" => "bottom", title: "Activity feed", :class => 'tooltips') %></li>
         <li><%= link_to(raw('<span class="glyphicon glyphicon-envelope"><span class="visible-xs">Inbox</span></span>'), "#", "data-toggle" => "tooltip", "data-placement" => "bottom", title: "Read your messages", :class => 'tooltips') %></li>
         <li><%= link_to(raw('<span class="glyphicon glyphicon-cog"><span class="visible-xs">Settings</span></span>'), edit_path, "data-toggle" => "tooltip", "data-placement" => "bottom", title: "Change your account settings", :class => 'tooltips') %></li>
         <li><%= link_to(raw('<span class="glyphicon glyphicon-off"><span class="visible-xs">Log</span></span>'), destroy_user_session_path, :method => :delete, "data-toggle" => "tooltip", "data-placement" => "bottom", title: "Log out", :class => 'tooltips') %></li>
