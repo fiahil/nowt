@@ -30,6 +30,7 @@ class PostsController < ApplicationController
 
     @post.user = current_user
     if @post.save
+      @post.create_activity :create, owner: current_user
       redirect_to @post, notice: 'Post was successfully created.'
     else
       redirect_to '/profile', notice: "Whoops, something happened!"
@@ -39,6 +40,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   def update
     if @post.increment(:update_count) && @post.update(post_params)
+      @post.create_activity :update, owner: current_user
       redirect_to @post, notice: 'Post was successfully updated.'
     else
       render action: 'edit'
@@ -48,6 +50,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   def destroy
     @post.destroy
+    @post.create_activity :destroy, owner: current_user
     redirect_to posts_url
   end
 

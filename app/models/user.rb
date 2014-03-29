@@ -8,10 +8,6 @@ class User < ActiveRecord::Base
     :omniauthable,
     :omniauth_providers => [:facebook, :twitter, :google_oauth2]
 
-  validates :name, 
-    :uniqueness => {
-    :case_sensitive => false
-  }, presence: true
   attr_accessor :login
 
   has_many :posts

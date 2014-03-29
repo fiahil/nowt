@@ -1,4 +1,7 @@
 Nowt::Application.routes.draw do
+  
+
+  resources :activities
   resources :tags
 
   root 'home#index'

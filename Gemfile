@@ -31,6 +31,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# Used for activity feed
+gem 'public_activity'
 
 # Asset pipeline for Heroku
 gem 'rails_12factor'
