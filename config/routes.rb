@@ -1,6 +1,5 @@
 Nowt::Application.routes.draw do
   
-
   resources :activities
   resources :tags
 
@@ -25,11 +24,7 @@ Nowt::Application.routes.draw do
 
   end
 
-
   devise_for :users, controllers: {registrations: 'registrations', :omniauth_callbacks => 'omniauth_callbacks'}
-
-   
-
 
   get '/board', to: "posts#index", as: "board"
   resources :posts
@@ -38,4 +33,6 @@ Nowt::Application.routes.draw do
 
   get '/search', to: "tasks#live_search"
   get '/emptySearch', to: "tasks#empty_search"
+
+  mount Commontator::Engine => '/commontator'
 end

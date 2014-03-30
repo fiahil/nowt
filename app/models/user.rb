@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
     :omniauthable,
     :omniauth_providers => [:facebook, :twitter, :google_oauth2]
 
+  acts_as_commontator
+  
   attr_accessor :login
 
   has_many :posts

@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
   include PublicActivity::Common
 
+  acts_as_commontable
+  
   belongs_to :user
   has_many :tags, through: :post_tag
   has_many :post_tag

@@ -104,10 +104,6 @@
 
 			<div class="row col-sm-12 col-md-12 col-lg-12">
 				<div class="nowt panel panel-default">
-					<h3>Comments</h3>
-					<p>gregCox</p>
-					<p>i really need to work on this (comment)</p>
-					<hr />
 					<h4>Smart Tags</h4>
 					<%= form_for(@post, as: :post, url: "/posts/#{@post.id}" , method: :patch) do |f| %>
 		
@@ -115,6 +111,7 @@
 					<% end %>
 
 				</div>
+				<%= commontator_thread(@post) %>
 			</div>
 
 		</div>
@@ -142,5 +139,6 @@
 					</a>				
 	    	</div>
 		</div>
+		
 	</div>
 </div>
