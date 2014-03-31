@@ -105,11 +105,9 @@
 			<div class="row col-sm-12 col-md-12 col-lg-12">
 				<div class="nowt panel panel-default">
 					<h4>Smart Tags</h4>
-					<%= form_for(@post, as: :post, url: "/posts/#{@post.id}" , method: :patch) do |f| %>
-		
-							<%= f.text_field :tag_tokens, "data-pre" => @post.tags.map(&:attributes).to_json, class: 'form-control', disabled: true %>
-					<% end %>
-
+					<% @post.tags.each do |tag| %>
+		                	<a class="smart-tags" href="/posts?q=<%= tag.name %>"><span class="label label-default"><%= tag.name %></span></a>
+		            <% end %>
 				</div>
 				<%= commontator_thread(@post) %>
 			</div>
