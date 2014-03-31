@@ -13,4 +13,8 @@ $(function(){
     interval: false,
   });
 
+   $( "#add-smart-tag-btn" ).click(function() {
+	  $( "#add-smart-tags" ).slideToggle("fast");
+   });
+
 });
