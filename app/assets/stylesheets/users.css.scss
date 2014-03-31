@@ -170,3 +170,15 @@ li .glyphicon {
 .panel-right {
   height: 260px;
 }
+
+.smart-tags:hover {
+  text-decoration: none;
+}
+
+.smart-tags span:hover {
+  background-color: #00ABA9;
+}
+
+#add-smart-tags {
+  display: none;
+}
