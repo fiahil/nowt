@@ -17,13 +17,15 @@
                                 <% end %>
                                         <div class="row">
                                             <% posts.each do |post| %>
-                                                <% unless class_name == 'trending' %>                                    
-                                                    <div class="col-md-6 col-lg-6">
-                                                <% else %>
-                                                    <div class="col-md-12 col-md-12">
-                                                <% end %>
-                                                        <%= render 'posts/nowt', post: post %>
-                                                    </div>  
+                                                <%= link_to("/posts/#{post.id}", class:post) do %>
+                                                    <% unless class_name == 'trending' %>                                    
+                                                        <div class="col-md-6 col-lg-6">
+                                                    <% else %>
+                                                        <div class="col-md-12 col-md-12">
+                                                    <% end %>
+                                                            <%= render 'posts/nowt', post: post %>
+                                                        </div> 
+                                                <% end %> 
                                             <% end %>
                                         </div>
                                     </div>

@@ -11,6 +11,14 @@
 		                <h4 class="media-heading"><%= @user.name %></h4>
 		                <h5>California State University, Long Beach</h5>
 		                <hr style="margin:8px auto">
+		                <% @user.tags.each do |tag| %>
+		                	<a class="smart-tags" href="/posts?q=<%= tag.name %>"><span class="label label-default"><%= tag.name %></span></a>
+		                <% end %>
+
+		                <hr style="margin:8px auto">
+		                <a id="add-smart-tag-btn" style="float:right" href="#"><small>Add more smart tags</small></a>
+		                <br />
+		                <div id="add-smart-tags">
 		                <%= form_for(@user, as: :user, url: update_tag_path(@user), method: :patch) do |f| %>
   							
 		                		<%= f.text_field :tag_tokens, "data-pre" => @user.tags.map(&:attributes).to_json, class: 'form-control' %>
@@ -19,6 +27,7 @@
 
 	                		<%= f.submit "Subscribe", class: "btn btn-primary", id: "loginsubmit" %>
                 		<% end %>
+                		</div>
 
 		            </div>
 		    	</div>
