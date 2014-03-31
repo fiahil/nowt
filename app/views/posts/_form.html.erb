@@ -42,8 +42,7 @@
 -->
 <div id="myModal" class="modal fade" tabindex="-1">
 
-  <% @post = Post.new %>
-  <%= form_for(@post) do |f| %>
+  <%= form_for(Post.new) do |f| %>
   <div class="modal-dialog modal-lg">
     
     <div class="modal-content">
@@ -148,8 +147,10 @@
                       <%= f.text_area(:description, class: "form-control", placeholder: "Description", rows: "4") %>
                     </div>
                     <div class="row" style="padding-top:10px">
+
+                      
                       <div class="col-lg-6 col-md-6 col-sm-6">
-                        <textarea class="form-control" id="smartTags" rows="2" style="resize:none;" placeholder="Smart Tags"></textarea>
+                        <%= f.text_field :tag_tokens, class: 'form-control' %>
                       </div>
                       <div class="col-lg-2 col-md-2 col-sm-2 col-lg-offset-4 col-md-offset-4 col-sm-offset-4"  >
                         <button type="submit" id="postButton" style="width:100%" class="btn btn-default btn-lg">Post!</button>
