@@ -1,1 +1,16 @@
-deleted a post:  <%= link_to activity.trackable.post.title, activity.trackable.post %>
+
+
+<div class="timeline-badge danger"><span class="glyphicon glyphicon-trash"></span></div>
+			<div class="timeline-panel">
+				<div class="timeline-heading">
+					<h4 class="timeline-title"><%= activity.owner.name if activity.owner %>
+						deleted a nowt: <%= activity.trackable.post.title %>
+
+					</h4>
+					<p><small class="text-muted"><span class="glyphicon glyphicon-time"></span><%= activity.updated_at %></small></p>
+				</div>
+
+
+
+
+

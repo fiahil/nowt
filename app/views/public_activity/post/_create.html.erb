@@ -1,7 +1,19 @@
-created a nowt:
+<div class="timeline-badge success"><span class="glyphicon glyphicon-pencil"></span></div>
+			<div class="timeline-panel">
+				<div class="timeline-heading">
+					<h4 class="timeline-title"><%= activity.owner.name if activity.owner %>
+						created a nowt:
 
-<% if activity.trackable %>
-  <%= link_to activity.trackable.title, activity.trackable %>
-<% else %>
-  which has since been removed
-<% end %>
+						<% if activity.trackable %>
+							<%= link_to activity.trackable.title, activity.trackable %>
+						<% else %>
+							which has since been removed
+						<% end %>
+					</h4>
+					<p><small class="text-muted"><span class="glyphicon glyphicon-time"></span><%= activity.created_at %></small></p>
+				</div>
+
+
+
+
+

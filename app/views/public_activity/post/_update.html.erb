@@ -1,1 +1,16 @@
-updated a post:  <%= link_to activity.trackable.title, activity.trackable %>
+
+
+<div class="timeline-badge warning"><span class="glyphicon glyphicon-wrench"></span></div>
+			<div class="timeline-panel">
+				<div class="timeline-heading">
+					<h4 class="timeline-title"><%= activity.owner.name if activity.owner %>
+						updated a nowt: <%= link_to activity.trackable.title, activity.trackable %>
+
+					</h4>
+					<p><small class="text-muted"><span class="glyphicon glyphicon-time"></span><%= activity.updated_at %></small></p>
+				</div>
+
+
+
+
+
