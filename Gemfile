@@ -46,7 +46,8 @@ gem 'rails_12factor'
 
 gem 'execjs', :platform => [:mswin, :mingw]
 
-
+# Pagination gem
+gem 'kaminari'
 # For *nix Platform
 # Use postgresql as the database for Active Record
 gem 'pg'
