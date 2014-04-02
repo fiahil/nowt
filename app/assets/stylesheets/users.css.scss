@@ -147,6 +147,11 @@ li .glyphicon {
     padding-left: 0;
 }
 
+.panel-body {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .panel-body-edit {
   padding: 0px;
 }
@@ -182,3 +187,9 @@ li .glyphicon {
 #add-smart-tags {
   display: none;
 }
+
+.carousel .well {
+  margin-bottom: 0;
+}
+
+
