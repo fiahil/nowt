@@ -4,9 +4,7 @@
 		<div class="col-sm-5 col-md-5 col-lg-5 profile-panels">
 			<div class="row col-sm-12 col-md-12 col-lg-12">
 				<div class="profile panel panel-default">
-		    		<a href="#" class='pull-left profile-img'>
-		        		<img class="media-object dp img-circle tooltips" src="http://www.rovers.co.uk/images/common/bg_player_profile_default_big.png" data-toggle = "tooltip" data-placement ="top" title ="Edit your profile" style="width: 50px;height:50px;">
-		    		</a>
+					<%= link_to(raw('<img class="media-object dp img-circle tooltips" src="http://www.rovers.co.uk/images/common/bg_player_profile_default_big.png" style="width: 50px;height:50px;" >'), edit_path, "data-toggle" => "tooltip", "data-placement" => "bottom", title: "Change your account settings", :class => 'tooltips pull-left profile-img') %>
 		            <div class="profile-body">																									
 		                <h4 class="media-heading"><%= @user.name %></h4>
 		                <h5>California State University, Long Beach</h5>
