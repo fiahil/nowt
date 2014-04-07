@@ -29,9 +29,11 @@ Nowt::Application.routes.draw do
   get '/board', to: "posts#index", as: "board"
   resources :posts
 
+  get '/search', to: "posts#search", as: "search"
+
   resources :users, only: [:show, :index]
 
-  get '/search', to: "tasks#live_search"
+  get '/livesearch', to: "tasks#live_search"
   get '/emptySearch', to: "tasks#empty_search"
 
   mount Commontator::Engine => '/commontator'

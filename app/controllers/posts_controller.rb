@@ -3,11 +3,9 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    userInput = params[:q]
-
-    if(userInput != "") 
-      @posts = Post.where("title ilike ? or description ilike ?", "%#{params[:q]}%", "%#{params[:q]}%")
-    else 
+    if user_signed_in?
+      @posts = find_interests
+    else
       @posts = Post.all
     end
 
@@ -54,6 +52,18 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  # Used for searching for a Post
+  def search
+    userInput = params[:q]
+    if(userInput != "") 
+      @posts = Post.where("title ilike ? or description ilike ?", "%#{params[:q]}%", "%#{params[:q]}%").all
+      @posts += find_posts_with_tags
+    else 
+      @posts = Post.all
+    end
+    render action: "index"
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_post
@@ -64,5 +74,20 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :description, :tag_tokens)
   end
+
+ def find_posts_with_tags
+    post_ids = []
+    tags = Tag.where("name ilike ? or description ilike ?", "%#{params[:q]}%", "%#{params[:q]}%").all
+    tags.each do |tag|
+      query = PostTag.where(tag_id: tag)
+
+      unless query.blank?
+        post_ids += query.map { |x| x.post_id }
+      end
+    end
+    
+    return Post.find_all_by_id(post_ids)
+  end
+
 
 end

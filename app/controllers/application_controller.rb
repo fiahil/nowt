@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
         query = PostTag.where(tag_id: tag)
 
         unless query.blank?
-          post_ids = post_ids + query.map {|x| x.post_id}
+          post_ids += query.map {|x| x.post_id}
         end
       end
 
