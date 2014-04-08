@@ -19,20 +19,27 @@
 	<div class="page-header">
 	<h1 id="timeline">Activities</h1>
 	</div>
-	<ul class="timeline">
-		<% @activities.each do |activity| %>
-		<li>
-			 <%= render_activity activity %>
-				<div class="timeline-body">
-					<% Post.find(activity.trackable_id).tags.each do |tag| %>
-		                	<a class="smart-tags" href="/posts?q=<%= tag.name %>"><span class="label label-default"><%= tag.name %></span></a>
-		            <% end %>
-				</div>
-			</div>
-		</li>
+	<% if @activities.empty? %>
+		<div id="activity-text"><h4>There are currently no recent activities!</h4></div>
 
-		<% end %>
-	</ul>
-	<%= paginate @activities %>
+	<% else %>
+		<ul class="timeline">
+			<% @activities.each do |activity| %>
+			<li>
+				 <%= render_activity activity %>
+					<div class="timeline-body">
+						<% Post.find(activity.trackable_id).tags.each do |tag| %>
+			                	<a class="smart-tags" href="/posts?q=<%= tag.name %>"><span class="label label-default"><%= tag.name %></span></a>
+			            <% end %>
+					</div>
+				</div>
+			</li>
+
+			<% end %>
+		</ul>
+		<%= paginate @activities %>
+	<% end %>
+
+	
 </div>
 
