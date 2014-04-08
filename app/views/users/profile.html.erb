@@ -8,7 +8,7 @@
 		            <div class="profile-body">																									
 		                <h4 class="media-heading"><%= @user.name %></h4>
 		                <h5>California State University, Long Beach</h5>
-		                <hr style="margin:8px auto">
+
 		                <% @user.tags.each do |tag| %>
 		                	<a class="smart-tags" href="/posts?q=<%= tag.name %>"><span class="label label-default"><%= tag.name %></span></a>
 		                <% end %>
