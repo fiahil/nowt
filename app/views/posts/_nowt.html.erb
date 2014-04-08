@@ -10,6 +10,10 @@
       <small><cite title="San Francisco, USA"><%= post.user.name %>, SCHOOL <i class="glyphicon glyphicon-map-marker">
       </i></cite></small>
       <p><%= post.description[0..30] %></p>
+      <% post.tags.each do |tag| %>
+        <span class="label label-default"><%= tag.name %></span>
+      <% end %>
+
       <!-- Split button -->
     </div> <!-- end text block -->
   </div> <!-- end row-->
