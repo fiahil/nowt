@@ -10,7 +10,7 @@
 		                <h5>California State University, Long Beach</h5>
 
 		                <% @user.tags.each do |tag| %>
-		                	<a class="smart-tags" href="/posts?q=<%= tag.name %>"><span class="label label-default"><%= tag.name %></span></a>
+		                	<a class="smart-tags" href="/search?q=<%= tag.name %>"><span class="label label-default"><%= tag.name %></span></a>
 		                <% end %>
 
 		                <hr style="margin:8px auto">
@@ -30,12 +30,12 @@
 		            </div>
 		    	</div>
 		    </div>
-		   	<%= render(partial: 'profile_nowts', :locals => {posts: @trending, title: "Trending", class_name: "trending"}) %>
+		   	<%=  render(partial: 'profile_nowts', :locals => {posts: @trending, title: "Trending", class_name: "trending"}) %>
 	    </div>
 
 	    <div class="col-sm-7 col-md-7 col-lg-7 profile-panels">
-	    	<%= render(partial: 'profile_nowts', :locals => {posts: @interests, title: "Here are some nowts you might be interested in!", class_name: "interest"}) %>
-	    	<%= render(partial: 'profile_nowts', :locals => {posts: @your_nowts, title: "Your Board!", class_name: "your-board"}) %>
+	    	<%=  render(partial: 'profile_nowts', :locals => {posts: @interests, title: "Here are some nowts you might be interested in!", class_name: "interest"}) %>
+	    	<%=  render(partial: 'profile_nowts', :locals => {posts: @your_nowts, title: "Your Board!", class_name: "your-board"}) %>
 	    </div>
 	</div>
 </div>

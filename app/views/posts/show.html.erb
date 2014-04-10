@@ -106,7 +106,7 @@
 				<div class="nowt panel panel-default">
 					<h4>Smart Tags</h4>
 					<% @post.tags.each do |tag| %>
-		                	<a class="smart-tags" href="/posts?q=<%= tag.name %>"><span class="label label-default"><%= tag.name %></span></a>
+		                	<a class="smart-tags" href="/search?q=<%= tag.name %>"><span class="label label-default"><%= tag.name %></span></a>
 		            <% end %>
 				</div>
 				<%= commontator_thread(@post) %>
