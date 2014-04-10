@@ -12,4 +12,8 @@ class Post < ActiveRecord::Base
   def tag_tokens=(ids)
     self.tag_ids = ids.split(",")
   end
+
+  # validations
+  validates :title, presence: true
+  validates :description, presence: true
 end
