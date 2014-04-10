@@ -3,12 +3,7 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    if user_signed_in?
-      @posts = find_interests
-    else
       @posts = Post.all
-    end
-
   end
   
   # GET /posts/1
@@ -63,7 +58,7 @@ class PostsController < ApplicationController
     end
     render action: "index"
   end
-
+  
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_post
