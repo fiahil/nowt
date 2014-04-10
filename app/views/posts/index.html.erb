@@ -6,16 +6,17 @@
             <strong>Warning!</strong> Nothing Found :[
           </div>
         <% else %>
-          <div class="col-md-10 col-md-offset-1">
-              <div class="row">
-                  <div class="col-md-12 post">
-                     <% @posts.each do |post| %>
-                        <%= render 'posts/nowt', :post => post %>
+            <ul class="cbp_tmtimeline">
+               <% post_counter = 1 %>
+               <% @posts.each do |post| %>
+                  <li>
+                    <%= render 'posts/nowt', :post => post, count: post_counter %>
+                  </li>
 
-                     <% end %>
-                  </div>
-              </div>
-          </div>
+                  <% post_counter += 1 %>
+               <% end %>
+            </ul>
         <% end %>
     </div>
 </div>
+

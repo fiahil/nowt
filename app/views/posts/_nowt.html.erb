@@ -1,47 +1,45 @@
-<div class="row">
+
+<time class="cbp_tmtime"><span><%= post.updated_at.strftime("%m/%d/%y") %> </span> <span><%= post.updated_at.strftime("%H:%M") %></span></time>
+<span class="cbp_tmicon cbp_tmicon-phone"><%= count %></span>
+
+<div class="cbp_tmlabel">
+  <div class="row">
     <div class="col-md-12">
-        <h4 class="post-title">
-            <strong><%= link_to(post.title, "/posts/#{post.id}") %></strong>
-        </h4>
+      <h2>
+        <strong><%= link_to(post.title, "/posts/#{post.id}", class: "post-title") %></strong>
+      </h2>
     </div>
-</div>
-<div class="row">
+  </div>
+  <div class="row">
     <div class="col-md-12 post-header-line">
-        <div class="tag-line">
-          <span class="glyphicon glyphicon-user"></span>by <%= post.user.name %><span class="post-divider">|</span>
-          <span class="glyphicon glyphicon-calendar"></span><%= post.updated_at %><span class="post-divider">|</span>
-          <span class="glyphicon glyphicon-comment"></span><%= comment_count(post) %></a><span class="post-divider">|</span>
-          <i class="icon-share"></i>
-            
-        </div>
+      <div class="tag-line">
+        </span>by <%= post.user.name %><span class="post-divider">|</span>
+        </span><%= comment_count(post) %></a>
+        <i class="icon-share"></i>
+      </div>
     </div>
-</div>
-<div class="row post-content">
+  </div>
+  <div class="row post-content">
     <div class="col-md-3">
-        <a href="#">
-            <img src="http://placehold.it/350x150" alt="" class="img-responsive">
-        </a>
+      <a href="#">
+        <img src="http://placehold.it/350x250" alt="" class="img-responsive">
+      </a>
     </div>
     <div class="col-md-9">
-        <p class="post-description">
-            <%= post.description %>
+      <p class="post-description">
+        <%= post.description %>
 
-        </p>
-        <p>
-
-            <%= link_to("Read more", "/posts/#{post.id}", class: "btn btn-read-more") %>
-        </p>
+      </p>
     </div>
-</div>
-<div class="row post-footer">
-  <div class="col-md-8">
-    <% post.tags.each do |tag| %>
-      <a class="smart-tags" href="/posts?q=<%= tag.name %>"><span class="label label-default"><%= tag.name %></span></a>
-    <% end %>
+  </div>
+  <div class="row post-footer">
+    <div class="col-md-8">
+      <% post.tags.each do |tag| %>
+      <a class="smart-tags" href="/search?q=<%= tag.name %>"><span class="label label-success"><%= tag.name %></span></a>
+      <% end %>
+
+    </div>
 
   </div>
 
 </div>
-
-<br />
-<br />
