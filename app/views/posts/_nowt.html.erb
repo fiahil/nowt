@@ -1,20 +1,47 @@
-<div class="well well-sm">
-  <div class="row">
-    <div class="col-sm-4 col-md-4 img-column">
-      <img src="http://placehold.it/210x240" alt="" class="img-rounded img-responsive" />
+<div class="row">
+    <div class="col-md-12">
+        <h4 class="post-title">
+            <strong><%= link_to(post.title, "/posts/#{post.id}") %></strong>
+        </h4>
     </div>
-    <div class="col-sm-8 col-md-8" >
-      <h4>
-      <%= post.title[0..20] %>
-      </h4>
-      <small><cite title="San Francisco, USA"><%= post.user.name %>, SCHOOL <i class="glyphicon glyphicon-map-marker">
-      </i></cite></small>
-      <p><%= post.description[0..30] %></p>
-      <% post.tags.each do |tag| %>
-        <span class="label label-default"><%= tag.name %></span>
-      <% end %>
+</div>
+<div class="row">
+    <div class="col-md-12 post-header-line">
+        <div class="tag-line">
+          <span class="glyphicon glyphicon-user"></span>by <%= post.user.name %><span class="post-divider">|</span>
+          <span class="glyphicon glyphicon-calendar"></span><%= post.updated_at %><span class="post-divider">|</span>
+          <span class="glyphicon glyphicon-comment"></span><%= comment_count(post) %></a><span class="post-divider">|</span>
+          <i class="icon-share"></i>
+            
+        </div>
+    </div>
+</div>
+<div class="row post-content">
+    <div class="col-md-3">
+        <a href="#">
+            <img src="http://placehold.it/350x150" alt="" class="img-responsive">
+        </a>
+    </div>
+    <div class="col-md-9">
+        <p class="post-description">
+            <%= post.description %>
 
-      <!-- Split button -->
-    </div> <!-- end text block -->
-  </div> <!-- end row-->
-</div> <!-- end well -->
+        </p>
+        <p>
+
+            <%= link_to("Read more", "/posts/#{post.id}", class: "btn btn-read-more") %>
+        </p>
+    </div>
+</div>
+<div class="row post-footer">
+  <div class="col-md-8">
+    <% post.tags.each do |tag| %>
+      <a class="smart-tags" href="/posts?q=<%= tag.name %>"><span class="label label-default"><%= tag.name %></span></a>
+    <% end %>
+
+  </div>
+
+</div>
+
+<br />
+<br />

@@ -8,29 +8,25 @@
                 <div class='col-md-12'>
                     <div class="carousel slide media-carousel" id="<%= class_name %>-carousel">
                         <div class="carousel-inner">
-                            <% post_counter = 1 %>
-                            <% posts.each_slice(2) do |posts| %>
+                                <% post_counter = 1 %>
+                                <% posts.each do |post| %>
+                               
                                 <% if post_counter == 1 %>
                                     <div class="item active">
                                 <% else %>
                                     <div class="item">
                                 <% end %>
                                         <div class="row">
-                                            <% posts.each do |post| %>
                                                 <%= link_to("/posts/#{post.id}", class:post) do %>
-                                                    <% unless class_name == 'trending' %>                                    
-                                                        <div class="col-md-6 col-lg-6">
-                                                    <% else %>
                                                         <div class="col-md-12 col-md-12">
-                                                    <% end %>
                                                             <%= render 'posts/nowt', post: post %>
                                                         </div> 
                                                 <% end %> 
-                                            <% end %>
+                                            
                                         </div>
                                     </div>
                                 <% post_counter += 1 %>
-                            <% end %>
+                                <% end %>
                         </div>
                         <% unless posts.empty? %>
                         <a data-slide="prev" href="#<%= class_name %>-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>

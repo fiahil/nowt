@@ -1,24 +1,21 @@
 <div class="container">
-  <ol class="breadcrumb" id="board-breadcrumb">
-    <li>CSULB</li>
-    <li>CECS</li>
-    <li class="active">492</li>
-  </ol>
-  <div class="row">
-    <% if(@posts.empty?) %>
-      <div class="alert alert-danger alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <strong>Warning!</strong> Nothing Found :[
-      </div>
-    <% else %>
-      <% @posts.each do |post| %>
-        <%= link_to("/posts/#{post.id}", class:post) do %>
-          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <%= render 'posts/nowt', :post => post %>
-          </div> <!-- -->
+    <div class="row">
+        <% if(@posts.empty?) %>
+          <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>Warning!</strong> Nothing Found :[
+          </div>
+        <% else %>
+          <div class="col-md-10 col-md-offset-1">
+              <div class="row">
+                  <div class="col-md-12 post">
+                     <% @posts.each do |post| %>
+                        <%= render 'posts/nowt', :post => post %>
+
+                     <% end %>
+                  </div>
+              </div>
+          </div>
         <% end %>
-      <% end %>
-    <% end %>
-  </div>
-  <hr>  
+    </div>
 </div>
