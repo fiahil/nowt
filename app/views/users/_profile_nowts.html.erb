@@ -5,7 +5,7 @@
 		</div>
 		<div class="panel-body <%= class_name %>">
 			<div class='row'>
-                <div class='col-md-12'>
+                <div class='col-md-12 col-lg-12'>
                     <div class="carousel slide media-carousel" id="<%= class_name %>-carousel">
                         <div class="carousel-inner">
                                 <% post_counter = 1 %>
@@ -19,7 +19,7 @@
                                         <div class="row">
                                                 <%= link_to("/posts/#{post.id}", class:post) do %>
                                                         <div class="col-md-12 col-md-12">
-                                                            <!-- render nowt partial -->
+                                                            <%= render 'users/profile_nowt', :post => post  %>
                                                         </div> 
                                                 <% end %> 
                                             
