@@ -6,16 +6,9 @@
             <strong>Warning!</strong> Nothing Found :[
           </div>
         <% else %>
-            <ul class="cbp_tmtimeline">
-               <% post_counter = 1 %>
                <% @posts.each do |post| %>
-                  <li>
-                    <%= render 'posts/nowt', :post => post, count: post_counter %>
-                  </li>
-
-                  <% post_counter += 1 %>
+                    <%= render 'posts/nowt', :post => post %>
                <% end %>
-            </ul>
         <% end %>
     </div>
 </div>

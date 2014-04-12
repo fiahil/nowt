@@ -9,9 +9,8 @@
 		                <h4 class="media-heading"><%= @user.name %></h4>
 		                <h5>California State University, Long Beach</h5>
 
-		                <% @user.tags.each do |tag| %>
-		                	<a class="smart-tags" href="/search?q=<%= tag.name %>"><span class="label label-success"><%= tag.name %></span></a>
-		                <% end %>
+		                <%= render(partial: 'tags/tag_labels', :locals => {object: @user}) %>
+		             
 
 		                <hr style="margin:8px auto">
 		                <a id="add-smart-tag-btn" style="float:right"><small>Add more smart tags</small></a>

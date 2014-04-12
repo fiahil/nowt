@@ -1,45 +1,35 @@
-
-<time class="cbp_tmtime"><span><%= post.updated_at.strftime("%m/%d/%y") %> </span> <span><%= post.updated_at.strftime("%H:%M") %></span></time>
-<span class="cbp_tmicon cbp_tmicon-phone"><%= count %></span>
-
-<div class="cbp_tmlabel">
-  <div class="row">
-    <div class="col-md-12  col-lg-12">
-      <h2>
-        <strong><%= link_to(post.title, "/posts/#{post.id}", class: "post-title") %></strong>
-      </h2>
+<div class="row">
+    <div class="col-md-12 col-lg-12 post">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>
+                    <strong>
+                      <%= link_to(post.title, "/posts/#{post.id}", class: "post-title") %>
+                    </strong>
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-12 post-header-line">
+                by <%= post.user.name %> <span class="post-divider"> | </span>
+                <%= post.updated_at.strftime("%m/%d/%y") %> <span class="post-divider"> | </span>
+                <%= link_to(comment_count(post), "/posts/#{post.id}", class: "post-comment") %> <span class="post-divider"> | </span>
+                Tags : <%= render(partial: 'tags/tag_labels', :locals => {object: post}) %>
+            </div>
+        </div>
+        <div class="row post-content">
+            <div class="col-md-3 col-lg-3">
+                <%= link_to "/posts/#{post.id}" do %>
+                    <img src="http://4.bp.blogspot.com/-_lqoNpVXeU4/UkxQ7N-QW8I/AAAAAAAACTw/pni-TZyp17o/s1600/cool+share+button+effects+styles.png" alt="" class="img-responsive">
+                <% end %>
+            </div>
+            <div class="col-md-9 col-lg-9">
+                <p class="post-description">
+                    <%= post.description %>
+                </p>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12  col-lg-12 post-header-line">
-      <div class="tag-line">
-        </span>by <%= post.user.name %><span class="post-divider">|</span>
-        </span><%= comment_count(post) %></a>
-        <i class="icon-share"></i>
-      </div>
-    </div>
-  </div>
-  <div class="row post-content">
-    <div class="col-md-3  col-lg-3">
-      <a href="#">
-        <img src="http://placehold.it/350x250" alt="" class="img-responsive">
-      </a>
-    </div>
-    <div class="col-md-9  col-lg-9">
-      <p class="post-description">
-        <%= post.description %>
-
-      </p>
-    </div>
-  </div>
-  <div class="row post-footer">
-    <div class="col-md-8 col-lg-8">
-      <% post.tags.each do |tag| %>
-      <a class="smart-tags" href="/search?q=<%= tag.name %>"><span class="label label-success"><%= tag.name %></span></a>
-      <% end %>
-
-    </div>
-
-  </div>
-
 </div>
+
+<br />

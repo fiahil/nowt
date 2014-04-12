@@ -3,15 +3,13 @@
     <div class="col-md-12 col-lg-12">
         <div>
             <img src="http://lorempixel.com/200/200/abstract/1/" alt="Texto Alternativo" class="img-circle img-thumbnail">
-            <h2><%= truncate_name(post.title) %></h2>
+            <h2 class="post-title"><%= truncate_name(post.title) %></h2>
             <div class="tag-line">
                 </span>by <%= post.user.name %><span class="post-divider">|</span>
-                </span><%= comment_count(post) %></a>             
+                </span><%= comment_count(post) %>             
             </div>
             <br />
-            <% post.tags.each do |tag| %>
-                <a class="smart-tags" href="/search?q=<%= tag.name %>"><span class="label label-success"><%= tag.name %></span></a>
-            <% end %>
+            <%= render(partial: 'tags/tag_labels', :locals => {object: post}) %>
         </div>
     </div>
 </div>
