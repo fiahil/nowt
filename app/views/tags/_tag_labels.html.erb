@@ -1,0 +1,3 @@
+<% object.tags.each do |tag| %>
+	<a class="smart-tags" href="/search?q=<%= tag.name %>"><span class="label label-success"><%= tag.name %></span></a>
+<% end %>
