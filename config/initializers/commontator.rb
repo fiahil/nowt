@@ -103,7 +103,7 @@ Commontator.configure do |config|
   #   :r (reputation system)
   # Note: you can format how the votes are displayed by modifying the locale file
   # Default: :n
-  config.comment_voting = :n
+  config.comment_voting = :ld
 
   # This proc is called with the value of config.comment_voting as an argument,
   # as well as pos and neg
@@ -128,7 +128,7 @@ Commontator.configure do |config|
   # If :l is selected, the "reply to thread" form will appear before the comments
   # Otherwise, it will appear after the comments
   # Default: :e
-  config.comment_order = :e
+  config.comment_order = :ve
 
   # Number of comments to display in each page
   # Set to nil to disable pagination

@@ -6,9 +6,11 @@
             <strong>Warning!</strong> Nothing Found :[
           </div>
         <% else %>
+          <div class="nowts-container col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
                <% @posts.each do |post| %>
                     <%= render 'posts/nowt', :post => post %>
                <% end %>
+          </div>
         <% end %>
     </div>
 </div>

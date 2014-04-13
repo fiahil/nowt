@@ -13,3 +13,8 @@
 
  *= require_tree .
  */
+
+body {
+	background-color: #489799;
+	padding-bottom: 40px;
+}
