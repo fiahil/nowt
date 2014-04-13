@@ -90,10 +90,10 @@ ActiveRecord::Schema.define(version: 20140413004718) do
   create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "description"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "update_count",         default: 0, null: false
-    t.integer  "user_id"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
@@ -117,8 +117,7 @@ ActiveRecord::Schema.define(version: 20140413004718) do
     t.datetime "updated_at"
   end
 
-  add_index "user_tags", ["tag_id"], name: "index_user_tags_on_tag_id", using: :btree
-  add_index "user_tags", ["user_id"], name: "index_user_tags_on_user_id", using: :btree
+  add_index "user_tags", ["user_id", "tag_id"], name: "index_user_tags_on_user_id_and_tag_id", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
