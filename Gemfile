@@ -22,6 +22,12 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use commontator
 gem 'commontator', '~> 4.5.0'
 
+# File upload
+gem 'paperclip'
+
+# Storage on Amazon
+gem 'aws-sdk'
+
 # Use commontator voting
 gem 'acts_as_votable'
 

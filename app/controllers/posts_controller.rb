@@ -67,7 +67,7 @@ class PostsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
-    params.require(:post).permit(:title, :description, :tag_tokens)
+    params.require(:post).permit(:title, :description, :tag_tokens, :picture)
   end
 
  def find_posts_with_tags

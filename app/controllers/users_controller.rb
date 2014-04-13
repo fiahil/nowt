@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     end
     redirect_to(root_path)
   end
-  
+
   def update
     @user = User.find(current_user.id)
     if @user.update_with_password(user_params)
@@ -84,7 +84,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email,:password, :password_confirmation, :current_password, :tag_tokens)
+      params.require(:user).permit(:name, :email, :avatar, :password, :password_confirmation, :current_password, :tag_tokens)
     end
 
     def pre_edit
