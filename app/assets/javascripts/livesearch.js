@@ -43,4 +43,12 @@ $( document ).ready(function(){
 
     });	
 
+    $("#post_update_tag_tokens").tokenInput("/tags.json", {
+    	crossDomain: false,
+    	prePopulate: $("#post_update_tag_tokens").data('pre'),
+    	theme: "facebook",
+    	preventDuplicates: true
+
+    });	
+
 });

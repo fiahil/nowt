@@ -1,7 +1,7 @@
 <h1>Editing post</h1>
 <%= form_for(@post, as: :post, url: "/posts/#{@post.id}" , method: :patch) do |f| %>
 		
-		<%= f.text_field :tag_tokens, "data-pre" => @post.tags.map(&:attributes).to_json, class: 'form-control' %>
+		<%= f.text_field :tag_tokens, class: 'form-control', id: 'post_update_tag_tokens', "data-pre" => @post.tags.map(&:attributes).to_json %>
 	
 	<br />
 
