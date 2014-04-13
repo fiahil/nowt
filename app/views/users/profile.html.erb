@@ -4,8 +4,8 @@
 		<div class="col-sm-5 col-md-5 col-lg-5 col-md-offset-1 col-lg-offset-1 profile-panels">
 			<div class="row col-sm-12 col-md-12 col-lg-12">
 				<div class="profile panel panel-default">
-          <%= link_to(edit_path, "data-toggle" => "tooltip", "data-placement" => "bottom", title: "Change your account settings", :class => 'tooltips pull-left profile-img') do %>
-            <% image_tag @user.avatar.url(:thumb) %>
+          <%= link_to(edit_path, "data-toggle" => "tooltip", "data-placement" => "bottom", title: "Change your account settings", :class => 'tooltips pull-left') do %>
+            <% image_tag @user.avatar.url(:thumb), class: 'profile-img dp' %>
             <% end %>
 		            <div class="profile-body">																									
 		                <h4 class="media-heading"><%= @user.name %></h4>
