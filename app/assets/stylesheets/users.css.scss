@@ -31,23 +31,11 @@ li .glyphicon {
 
 }
 
-.profile-img {
+.profile-img{
+    height: 75px;
+    width: 75px;
     margin-right: 15px;
     margin-bottom: 15px;
-}
-
-.dp
-{
-    border:10px solid #eee;
-    transition: all 0.2s ease-in-out;
-}
-.dp:hover
-{
-    border:2px solid #eee;
-    transform:rotate(360deg);
-    -ms-transform:rotate(360deg);  
-    -webkit-transform:rotate(360deg);  
-    /*-webkit-font-smoothing:antialiased;*/
 }
 
 .label-st a{

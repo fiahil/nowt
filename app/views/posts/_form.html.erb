@@ -42,7 +42,7 @@
 -->
 <div id="myModal" class="modal fade" tabindex="-1">
 
-  <%= form_for(Post.new) do |f| %>
+  <%= form_for(Post.new, html: {multipart: true}) do |f| %>
   <div class="modal-dialog modal-lg">
     
     <div class="modal-content">
@@ -83,6 +83,10 @@
 
                       <div class="field">
                         <%= f.text_field(:title, class: "form-control", placeholder: "Title", style: "margin-bottom:10px") %>
+                      </div>
+
+                      <div class="field">
+                        <%= f.file_field(:picture, class: "form-control")%>
                       </div>
 
                       <input id="location" class="form-control" placeholder="Location" style="margin-bottom:10px"> <!-- LOCATION FIELD -->

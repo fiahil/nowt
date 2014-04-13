@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :pre_edit, only: [:edit, :edit_name, :edit_password, :edit_email]
+  before_action :pre_edit, only: [:edit, :edit_name, :edit_password, :edit_email, :edit_avatar]
   before_action :authenticate
   layout :resolve_template
   # GET /users
@@ -27,6 +27,10 @@ class UsersController < ApplicationController
 
   end
 
+  def edit_avatar
+
+  end
+
   def update_tags
     @user = User.find(current_user.id)
     unless @user.update_attributes(user_params)
@@ -34,7 +38,7 @@ class UsersController < ApplicationController
     end
     redirect_to(root_path)
   end
-  
+
   def update
     @user = User.find(current_user.id)
     if @user.update_with_password(user_params)
@@ -84,7 +88,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email,:password, :password_confirmation, :current_password, :tag_tokens)
+      params.require(:user).permit(:name, :email, :avatar, :password, :password_confirmation, :current_password, :tag_tokens)
     end
 
     def pre_edit
@@ -93,7 +97,7 @@ class UsersController < ApplicationController
     
     def resolve_template
       case action_name
-      when "edit", "edit_password", "edit_name", "edit_email"
+      when "edit", "edit_password", "edit_name", "edit_email", "edit_avatar"
 
       else
         "application"

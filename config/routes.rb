@@ -18,6 +18,7 @@ Nowt::Application.routes.draw do
     get "/edit_password" => "users#edit_password"
     get "/edit_name" => "users#edit_name"
     get "/edit_email" => "users#edit_email"
+    get "/edit_avatar" => "users#edit_avatar"
     patch '/update' => 'users#update'
     match '/delete' => 'users#destroy', :via => :delete
     patch '/update_tag' => "users#update_tags"
