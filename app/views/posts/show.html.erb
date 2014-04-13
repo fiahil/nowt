@@ -82,9 +82,8 @@
 		<div class="col-sm-8 col-md-8 col-lg-8 nowt-panels">
 			<div class="row col-sm-12 col-md-12 col-lg-12">
 					<div class="nowt panel panel-default">
-						
-							<img class="pull-left nowt-img" src="http://placehold.it/300x300/bbb/&text=Your%20Logo" width="300px" height="300px" alt="App Logo"/>
-						
+
+            <%= image_tag @post.picture.url(:medium), class: "pull-left nowt-img" %>
 						<div class="nowt-body">
 							<div class="nowt-header">
 								<h3> <%= @post.title %> </h3>	

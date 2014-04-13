@@ -1,9 +1,14 @@
 
-<%= form_for(@user, :url => { :action => "update" }, html: {:class => 'form-signin'} ) do |f| %>
+<%= form_for(@user, :url => { :action => "update" }, html: {:class => 'form-signin', :multipart => true} ) do |f| %>
    <h3>Edit Name</h3>
    <div class="input-group">
     <span class="input-group-addon glyphicon glyphicon-user"></span>
     <%= f.text_field :name, class: 'form-control', placeholder: '@user.name', required: true %>
+  </div>
+   <h3>Change Avatar</h3>
+   <div class="input-group">
+    <span class="input-group-addon glyphicon glyphicon-user"></span>
+    <%= f.file_field :avatar, class: 'form-control' %>
   </div>
   <div class="input-group">
     <span class="input-group-addon glyphicon glyphicon-lock"></span>

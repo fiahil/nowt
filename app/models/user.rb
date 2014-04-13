@@ -8,8 +8,22 @@ class User < ActiveRecord::Base
     :omniauthable,
     :omniauth_providers => [:facebook, :twitter, :google_oauth2]
 
+  has_attached_file :avatar,
+    use_timestamp: false,
+    preserve_files: true,
+    styles: {:medium => "300x300#", :thumb => "100x100#"},
+    default_url: "http://www.rovers.co.uk/images/common/bg_player_profile_default_big.png",
+    url: "/avatars/:id/:style_:hash.:extension",
+    hash_secret: "dTh5NzZ0NXI0ZTN3ZTdTh5NzZ0NXI0ZTN3ZTU0eSBnaGprcG9sLDtt",
+    storage: :s3,
+    s3_credentials: "#{Rails.root}/config/s3.yml"
+
+  validates_attachment :avatar,
+    content_type: { content_type: /^image\/(jpg|jpeg|pjpeg|png|x-png)$/ },
+    size: { in: 0..1.megabytes }
+
   acts_as_commontator
-  
+
   attr_accessor :login
 
   has_many :posts
