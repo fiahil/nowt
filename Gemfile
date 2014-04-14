@@ -25,6 +25,10 @@ gem 'commontator', '~> 4.5.0'
 # File upload
 gem 'paperclip'
 
+# 
+gem "private_pub"
+gem 'thin'
+
 # Storage on Amazon
 gem 'aws-sdk'
 
