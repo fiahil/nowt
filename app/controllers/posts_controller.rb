@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     if @post.user != current_user
-      redirect_to @post, notice: "You do not have permission to edit this nowt!"
+      redirect_to @post, alert: "You do not have permission to edit this nowt!"
     end
   end
 
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
       @post.create_activity :create, owner: current_user
       redirect_to @post, notice: 'Post was successfully created.'
     else
-      redirect_to '/profile', notice: "Whoops, something happened!"
+      redirect_to '/profile', alert: "Please fill out the form correctly!"
     end
   end
 
@@ -67,7 +67,7 @@ class PostsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def post_params
-    params.require(:post).permit(:title, :description, :tag_tokens, :picture)
+    params.require(:post).permit(:title, :description, :tag_tokens, :picture, :category)
   end
 
  def find_posts_with_tags
