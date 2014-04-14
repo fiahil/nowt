@@ -1,171 +1,42 @@
 
 
-<!--
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <% @post = Post.new %>
-  <%= form_for(@post) do |f| %>
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Create a nowt!</h4>
-      </div>
-      <div class="modal-body">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4, col-xs-12">
-              <div class="logowrapper">
-                <img class="logoicon" style="width:100%" src="http://placehold.it/300x300/bbb/&text=Your%20Logo" alt="App Logo"/>
-              </div>
-            </div> 
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-              
-                <div class="field">
-                  <%= f.label :title %><br>
-                  <%= f.text_field(:title, class: "form-control", placeholder: "Title") %>
-                </div>
-                <div class="field">
-                  <%= f.label :description %><br>
-                  <%= f.text_area(:description, class: "form-control", placeholder: "Description") %>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Post</button>
-      </div>
-    </div>
-  </div>
-  <% end %>
-</div>
--->
 <div id="myModal" class="modal fade" tabindex="-1">
 
-  <%= form_for(Post.new, html: {multipart: true}) do |f| %>
-  <div class="modal-dialog modal-lg">
-    
+
+  <div class="modal-dialog modal-md nowt-modal">
+    <%= form_for(Post.new, :html => {:class => "cbp-mc-form"}) do |f| %>
     <div class="modal-content">
+
       <ul class="cbp-vimenu">
-              <li><a href="#">Books</a></li>
-              <li><a href="#">Events</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Misc.</a></li>
-            </ul>
-      <div class="modal-header">
+        <li><a href="#" title="Book" class="modal-category-active"><span class="glyphicon glyphicon-book"></span></a></li>
+        <li><a href="#" title="Service"><span class="glyphicon glyphicon-briefcase"></span></a></li>
+        <li><a href="#" title="Event"><span class="glyphicon glyphicon-calendar"></span></a></li>
+        <li><a href="#" title="Misc"><span class="glyphicon glyphicon-asterisk"></span></a></li>
+      </ul>
+      <%= f.hidden_field :category, value: "Book" %>
 
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h2 class="modal-title" style='text-align:center'>Post a Nowt (fill in these fields the best you can!)</h2>
-          </div>
-          <div class="modal-body">
-
-            <div class="container-fluid">
-              <form>
-                <div class="row">
-                  <div class="col-lg-4 col-md-4 col-sm-4"> <!-- START: UPLOAD IMAGE -->
-                    <div class="logowrapper">
-                      <img class="logoicon" style="width:100%" src="http://placehold.it/300x300/bbb/&text=Your%20Logo" alt="Image Uploader"/>
-                    </div>
-                  </div> <!-- END: UPLOAD IMAGE -->
-                  <div class="col-lg-8 col-md-8 col-sm-8 "> <!-- START: RIGHT COLUMN -->
-                    <select class="form-control" id="select" onChange="handleSelection(value)" style="margin-bottom:10px"> <!-- SELECT: Nowt Type -->
-                      <option selected>Select Nowt Type</option>
-                      <option value="selectBook">Book</option>
-                      <option value="selectMeet">Meet Up</option>
-                      <option value="selectService">Service</option>
-                      <option value="selectEvent">Event</option>
-                    </select>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <div class="row">
+              <%= f.label :title, "Title", class: "modal-label" %>
+              <%= f.text_field :title, :id => "modal-title", :placeholder => "Lorem Ipsum", :autofocus => true, :required => true %>
               
-                    <div id="toolTip" style="font-size:xx-large; padding-top:75px; text-align: center">
-                      <p>Select a Nowt Type To Get Started!</p>
-                    </div>
-                    <div id="topForms" style="display:none">
-
-                      <div class="field">
-                        <%= f.text_field(:title, class: "form-control", placeholder: "Title", style: "margin-bottom:10px") %>
-                      </div>
-
-                      <div class="field">
-                        <%= f.file_field(:picture, class: "form-control")%>
-                      </div>
-
-                      <input id="location" class="form-control" placeholder="Location" style="margin-bottom:10px"> <!-- LOCATION FIELD -->
-                      <input id="author" class="form-control" placeholder="Author" style="margin-bottom:10px"> <!-- AUTHOR FIELD -->  
-                      <input id="classNumber" class="form-control" placeholder="Class" style="margin-bottom:10px"> <!-- CLASSNUM FIELD -->
-                      <div class="row" id="conditionPrice"> <!-- CONDITION AND SALE PRICE -->
-                        <div class="col-lg-9 col-md-9 col-sm-9">
-                          <select class="form-control" id="condition"> <!-- SELECT CONDITION -->
-                            <option selected>Condition</option>
-                            <option>Excellent</option>
-                            <option>Good</option>
-                            <option>Fair</option>
-                            <option>Poor</option>
-                            <option>Bad</option>
-                          </select>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3">
-                          <input id="salePrice" class="form-control" placeholder="Sale Price"><!-- SALEPRICE FIELD -->
-                        </div>
-                      </div>
-
-                      <div class="row" id="dateRow"> <!-- START: START AND END DATE -->
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                          <input type="text" class="form-control" id="startDate" placeholder="Start Date (MM/DD/YYYY)">
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                          <input type="text" class="form-control" id="endDate" placeholder="End Date (MM/DD/YYYY)">
-                        </div>
-                      </div> <!-- END: START AND END DATE -->
-                      <div class="row" style="padding-top:10px" id="timeRow"> <!-- START: START AND END TIME -->
-                        <div class="col-lg-3 col-md-3 col-sm-3">
-                          <select class="form-control" id="startTime">
-                            <option selected>Start</option>
-                            <option>1:00</option><option>1:15</option><option>1:30</option><option>1:45</option><option>2:00</option><option>2:15</option><option>2:30</option><option>2:45</option><option>3:00</option><option>3:15</option><option>3:30</option><option>3:45</option><option>4:00</option><option>4:15</option><option>4:30</option><option>4:45</option><option>5:00</option><option>5:15</option><option>5:30</option><option>5:45</option><option>6:00</option><option>6:15</option><option>6:30</option><option>6:45</option><option>7:00</option><option>7:15</option><option>7:30</option><option>7:45</option><option>8:00</option><option>8:15</option><option>8:30</option><option>8:45</option><option>9:00</option><option>9:15</option><option>9:30</option><option>9:45</option><option>10:00</option><option>10:15</option><option>10:30</option><option>10:45</option><option>11:00</option><option>11:15</option><option>11:30</option><option>11:45</option><option>12:00</option><option>12:15</option><option>12:30</option><option>12:45</option>                        
-                          </select>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3">
-                          <select class="form-control" id="startAMPM">
-                            <option selected>AM/PM</option>
-                            <option>AM</option>
-                            <option>PM</option>   
-                          </select>
-                        </div>    
-                        <div class="col-lg-3 col-md-3 col-sm-3">
-                          <select class="form-control" id="endTime">
-                            <option selected>End</option>
-                            <option>1:00</option><option>1:15</option><option>1:30</option><option>1:45</option><option>2:00</option><option>2:15</option><option>2:30</option><option>2:45</option><option>3:00</option><option>3:15</option><option>3:30</option><option>3:45</option><option>4:00</option><option>4:15</option><option>4:30</option><option>4:45</option><option>5:00</option><option>5:15</option><option>5:30</option><option>5:45</option><option>6:00</option><option>6:15</option><option>6:30</option><option>6:45</option><option>7:00</option><option>7:15</option><option>7:30</option><option>7:45</option><option>8:00</option><option>8:15</option><option>8:30</option><option>8:45</option><option>9:00</option><option>9:15</option><option>9:30</option><option>9:45</option><option>10:00</option><option>10:15</option><option>10:30</option><option>10:45</option><option>11:00</option><option>11:15</option><option>11:30</option><option>11:45</option><option>12:00</option><option>12:15</option><option>12:30</option><option>12:45</option>                          
-                          </select>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3">
-                          <select class="form-control" id="endAMPM">
-                              <option selected>AM/PM</option>
-                              <option>AM</option>
-                              <option>PM</option>   
-                          </select>
-                        </div>                            
-                      </div> <!-- END: START AND END TIME -->
-                    </div> <!-- END: TOP FORMS -->
-                  </div <!-- END: RIGHT COLUMN -->
-                  <div class="container-fluid" id="bottomRow" style="display:none; padding-top:265px"> <!-- START: BOTTOM ROW -->
-                    <div class="field">
-                      <%= f.text_area(:description, class: "form-control", placeholder: "Description", rows: "4") %>
-                    </div>
-                    <div class="row" style="padding-top:10px">
-
-                      
-                      <div class="col-lg-6 col-md-6 col-sm-6">
-                        <%= f.text_field :tag_tokens, class: 'form-control' %>
-                      </div>
-                      <div class="col-lg-2 col-md-2 col-sm-2 col-lg-offset-4 col-md-offset-4 col-sm-offset-4"  >
-                        <button type="submit" id="postButton" style="width:100%" class="btn btn-default btn-lg">Post!</button>
-                      </div>
-                    </div>
-                  </div> <!-- END: BOTTOM ROW -->
-                </div> <!-- END ENTIRE ROW -->
-              </form> <!-- END FORM -->
-            </div> <!-- end container -->
-          </div> <!-- end modal body -->
-        </div> <!-- end modal content -->
-      </div> <!-- end modal dialog -->
-      <% end %>
-    </div> <!-- end my modal -->
+              <%= f.label :description, "Description", class: "modal-label" %>
+              <%= f.text_area :description, id: "modal-description", :placeholder => "Lorem ipsum dolor sit amet, sed viris dissentiet ne, ad ius oporteat urbanitas adversarium, has electram adipiscing an.", :required => true %>
+          </div>
+          <div class="row">
+              <%= f.label :picture, "Upload an Image", class: "modal-label" %>
+              <%= f.file_field :picture %>
+              <label class="modal-label" for="post_tag_tokens">Smart Tags</label>
+              <%= f.text_field :tag_tokens, class: 'form-control pull-right' %>
+ 
+          </div>
+          <div class="cbp-mc-submit-wrap"><input class="cbp-mc-submit" type="submit" value="Nowt It!" /></div>
+          </div>
+        </div>
+      </div> <!-- end modal body -->
+    </div> <!-- end modal content -->
+  </div> <!-- end modal dialog -->
+  <% end %>
+</div> <!-- end my modal -->
