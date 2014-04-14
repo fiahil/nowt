@@ -25,9 +25,12 @@ gem 'commontator', '~> 4.5.0'
 # File upload
 gem 'paperclip'
 
-# 
+# Used for push notifications
 gem "private_pub"
 gem 'thin'
+
+# Unobtrusive Notification Look
+gem "gritter"
 
 # Storage on Amazon
 gem 'aws-sdk'
