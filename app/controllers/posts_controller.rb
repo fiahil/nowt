@@ -26,10 +26,6 @@ class PostsController < ApplicationController
       @post.create_activity :create, owner: current_user
       subscriptions = get_post_subscriptions(@post)
 
-      subscriptions.each do |sub|
-        PrivatePub.publish_to(sub, "alert('#{@post.user.name} has created a nowt: #{@post.title}')")
-      end
-      
     else
       redirect_to '/profile', alert: "Please fill out the form correctly!"
     end
