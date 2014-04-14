@@ -1,12 +1,12 @@
 <div class="nowt-container col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
 	<div class="row nowt-image-title">
-		<div class="col-md-2">
+		<div class="col-md-2 col-lg-2">
 			<img src="http://placehold.it/150x150/bbb/&amp;text=Your%20Logo" alt="Image Uploader">
 		</div>
-		<div class="col-md-8 nowt-title-info">
+		<div class="col-md-8 col-lg-8 nowt-title-info">
 			<h3> <%= @post.title %> </h3>
 		</div>
-		<div class="col-md-2" style="text-align: right; padding: 5px 15px 5px 5px;">
+		<div class="col-md-2 col-lg-2" style="text-align: right; padding: 5px 15px 5px 5px;">
 			<% if user_signed_in? && current_user == @post.user %>
 				<%= link_to 'Edit', edit_post_path(@post) %> |
 			<% end %>
@@ -18,7 +18,8 @@
 	</div>
 	<div class="panel panel-default">
 		<h5>Smart Tags</h5>
-		<%= render(partial: 'tags/tag_labels', :locals => {object: @post}) %>
+		<h6><%= render(partial: 'tags/tag_labels', :locals => {object: @post}) %><h6>
 	</div>
 	<%= commontator_thread(@post) %>
 </div> <!-- end container-->
+
