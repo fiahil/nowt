@@ -7,5 +7,9 @@ module PostsHelper
 		return count == 1 ? "#{count} Comment" : "#{count} Comments"
 	end
 
+	def get_tags(post)
+		return post.tags.map { |tag| "#{tag.name}"}.join(", ")
+	end
+
 
 end
