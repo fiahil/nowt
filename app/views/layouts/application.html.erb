@@ -21,6 +21,16 @@
 
 <%= content_for?(:content) ? yield(:content) : yield %>
 
+<% if user_signed_in? %>
+	<% unless current_user.tags.empty? %>
+		<% subscriptions = get_subscriptions(current_user) %>
+
+		<% subscriptions.each do |sub| %>
+			<%= subscribe_to(sub) %>
+		<% end %>
+	<% end %>
+<% end %>
+
 
 
 </body>

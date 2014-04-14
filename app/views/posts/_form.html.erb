@@ -4,7 +4,7 @@
 
 
   <div class="modal-dialog modal-md nowt-modal">
-    <%= form_for(Post.new, :html => {:class => "cbp-mc-form"}) do |f| %>
+    <%= form_for(Post.new, :html => {:class => "cbp-mc-form"}, remote: true) do |f| %>
     <div class="modal-content">
 
       <ul class="cbp-vimenu">

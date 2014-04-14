@@ -24,7 +24,12 @@ class PostsController < ApplicationController
     @post.user = current_user
     if @post.save
       @post.create_activity :create, owner: current_user
-      redirect_to @post, notice: 'Post was successfully created.'
+      subscriptions = get_post_subscriptions(@post)
+
+      subscriptions.each do |sub|
+        PrivatePub.publish_to(sub, "alert('#{@post.user.name} has created a nowt: #{@post.title}')")
+      end
+      
     else
       redirect_to '/profile', alert: "Please fill out the form correctly!"
     end
@@ -82,6 +87,14 @@ class PostsController < ApplicationController
     end
     
     return Post.find_all_by_id(post_ids)
+  end
+
+  def get_post_subscriptions(post)
+    tags = post.tags
+
+    return tags.map do |channel|
+      "/#{channel.name}".gsub(/\s+/, "")
+    end
   end
 
 
