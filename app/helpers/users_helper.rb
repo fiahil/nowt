@@ -8,12 +8,5 @@ module UsersHelper
 		end
 	end
 
-	def get_subscriptions(user)
-		tags = user.tags
-
-		return tags.map do |channel|
-			"/#{channel.name}".gsub(/\s+/, "")
-		end
-
-	end
+	
 end
