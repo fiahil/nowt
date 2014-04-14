@@ -1,4 +1,5 @@
 <%= form_for(@user, :url => { :action => "update" }, html: {:class => 'form-signin', :multipart => true} ) do |f| %>
 <h3>Change Avatar</h3>
     <%= f.file_field :avatar %>
+    <%= f.submit "Update!", class: "btn btn-primary", id: "loginsubmit" %>
  <% end %>
