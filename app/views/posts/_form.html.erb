@@ -27,9 +27,9 @@
           </div>
           <div class="row">
               <%= f.label :picture, "Upload an Image", class: "modal-label" %>
-              <%= f.file_field :picture %>
+              <%= f.file_field :picture, id: "modal-picture" %>
               <label class="modal-label" for="post_tag_tokens">Smart Tags</label>
-              <%= f.text_field :tag_tokens, class: 'form-control pull-right' %>
+              <%= f.text_field :tag_tokens, class: 'form-control' %>
  
           </div>
           <div class="cbp-mc-submit-wrap"><input class="cbp-mc-submit" type="submit" value="Nowt It!" /></div>

@@ -107,9 +107,9 @@
     cursor: pointer;
 }
 
-.cbp-mc-form input,
-.cbp-mc-form textarea,
-.cbp-mc-form select {
+.cbp-mc-form #modal-title,
+.cbp-mc-form #modal-description,
+.cbp-mc-form #modal-picture {
     font-family: 'Lato', Calibri, Arial, sans-serif;
     line-height: 1.5;
     font-size: 1.4em;
@@ -119,6 +119,7 @@
     width: 100%;
     background: transparent;
 }
+
 
 .cbp-mc-form input,
 .cbp-mc-form textarea {
