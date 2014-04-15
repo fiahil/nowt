@@ -39,6 +39,12 @@ module Commontator
           recipients = @thread.subscribers.reject{|s| s == @user}
           SubscriptionsMailer.comment_created(@comment, recipients).deliver \
             unless recipients.empty?
+          @post = Post.find(@thread)
+
+          unless @post.user == @user
+            PostsController.create_comment_activity(@post, @user)
+          end
+          
 
           format.html { redirect_to @thread }
           format.js

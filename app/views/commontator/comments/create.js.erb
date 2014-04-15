@@ -1,3 +1,10 @@
+
+<% unless @post.user == @user %>
+	<% publish_to "/post/#{@post.id}" do %>
+		<%= add_gritter(get_tags(@post), :title => "#{@user.name} has commented on your nowt: #{@post.title}", :time => 7000, :image => "http://challenge.ucsd.edu/wp-content/uploads/2012/02/email_icon_small.gif") %>
+	<% end %>
+<% end %>
+
 $("#thread_<%= @thread.id %>_comment_list_div").html("<%= escape_javascript(
     render :partial => 'list',
            :locals => {:comments => @thread.ordered_comments,
