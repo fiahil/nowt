@@ -24,8 +24,6 @@ class PostsController < ApplicationController
     @post.user = current_user
     if @post.save
       @post.create_activity :create, owner: current_user
-      subscriptions = get_post_subscriptions(@post)
-
     else
       redirect_to '/profile', alert: "Please fill out the form correctly!"
     end
@@ -60,6 +58,12 @@ class PostsController < ApplicationController
     render action: "index"
   end
   
+  def self.create_comment_activity(post, user)
+    post.create_activity :comment, owner: user
+
+  end
+
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_post
@@ -83,14 +87,6 @@ class PostsController < ApplicationController
     end
     
     return Post.find_all_by_id(post_ids)
-  end
-
-  def get_post_subscriptions(post)
-    tags = post.tags
-
-    return tags.map do |channel|
-      "/#{channel.name}".gsub(/\s+/, "")
-    end
   end
 
 
