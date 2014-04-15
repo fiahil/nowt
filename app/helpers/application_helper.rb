@@ -7,4 +7,16 @@ module ApplicationHelper
 		end
 
 	end
+
+	def get_user_posts(user)
+		posts = user.posts
+
+		return posts.map do |channel|
+			"/post/#{channel.id}"
+		end
+	end
+
+	def get_tags(post)
+		return post.tags.map { |tag| "#{tag.name}"}.join(", ")
+	end
 end
