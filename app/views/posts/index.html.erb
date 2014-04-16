@@ -10,7 +10,9 @@
                <% @posts.each do |post| %>
                     <%= render 'posts/nowt', :post => post %>
                <% end %>
+               <%= paginate @posts %>
           </div>
+
         <% end %>
     </div>
 </div>
