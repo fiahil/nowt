@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-      @posts = Post.all
+      @posts = Post.scoped.page(params[:page]).per(10)
   end
   
   # GET /posts/1
@@ -50,12 +50,11 @@ class PostsController < ApplicationController
   def search
     userInput = params[:q]
     if(userInput != "") 
-      @posts = Post.where("title ilike ? or description ilike ?", "%#{params[:q]}%", "%#{params[:q]}%").all
-      @posts += find_posts_with_tags
+      @posts = Post.where(id: search_posts(userInput)).page(params[:page]).per(10)
+      render action: "index"
     else 
-      @posts = Post.all
+      redirect_to '/board'
     end
-    render action: "index"
   end
   
   def self.create_comment_activity(post, user)
@@ -74,10 +73,12 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :description, :tag_tokens, :picture, :category)
   end
-
- def find_posts_with_tags
+  
+  def search_posts(userInput)
     post_ids = []
-    tags = Tag.where("name ilike ? or description ilike ?", "%#{params[:q]}%", "%#{params[:q]}%").all
+    post_ids += Post.where("title ilike ? or description ilike ?", "%#{userInput}%", "%#{userInput}%").ids
+    tags = Tag.where("name ilike ? or description ilike ?", "%#{userInput}%", "%#{userInput}%").ids
+
     tags.each do |tag|
       query = PostTag.where(tag_id: tag)
 
@@ -85,8 +86,8 @@ class PostsController < ApplicationController
         post_ids += query.map { |x| x.post_id }
       end
     end
-    
-    return Post.find_all_by_id(post_ids)
+
+    return post_ids.uniq
   end
 
 
