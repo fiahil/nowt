@@ -1,11 +1,4 @@
 $(document).ready(function(){
-	$('.cbp-vimenu > li a').click(function(){
-		$('.cbp-vimenu > li a').removeClass("modal-category-active");
-		$(this).addClass("modal-category-active");
-		$('#post_category').val($(this).attr('title')); 	
-	});
-
-
 	$('#activate-nowt-modal').click(function(){
 		$("#myModal").modal("show");
 	})
@@ -13,4 +6,12 @@ $(document).ready(function(){
 	$('.cbp-mc-submit').click(function(){
 		$("#myModal").modal("hide");
 	})
+
+	 $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+        e.preventDefault();
+        $(this).siblings('a.active').removeClass("active");
+        $(this).addClass("active");
+        $('#post_category').val($(this).attr('title')); 
+        
+    });
 });
