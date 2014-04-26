@@ -48,7 +48,7 @@ class UsersController < ApplicationController
       redirect_to(controller: "users", action: "profile")
     else
       flash[:error] = "Your account did not update successfully. Please try again!"
-      render "edit"
+      redirect_to(edit_path)
     end
   end
 
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
       redirect_to(root_path)
     else
       flash[:error] = "Could not delete your account. Please try again!"
-      render "edit"
+      redirect_to(edit_path)
     end
   end
 

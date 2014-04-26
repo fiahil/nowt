@@ -15,9 +15,11 @@
 </head>
 <body>
 
+
 <%= render 'layouts/header' %>
 
-
+<%= js add_gritter(devise_error_messages!, :image => :error, :title => "Whoops! Something bad happened!", :sticky => true, :time => 6000) %>
+<%= js add_gritter(devise_success_messages!, :image => :success, :title => "Successful!", :sticky => true, :time => 6000) %>
 
 <%= content_for?(:content) ? yield(:content) : yield %>
 
