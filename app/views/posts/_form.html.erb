@@ -8,10 +8,42 @@
     <div class="modal-content">
 
       <ul class="cbp-vimenu">
-        <li><a href="#" title="Book" class="modal-category-active"><span class="glyphicon glyphicon-book"></span></a></li>
-        <li><a href="#" title="Service"><span class="glyphicon glyphicon-briefcase"></span></a></li>
-        <li><a href="#" title="Event"><span class="glyphicon glyphicon-calendar"></span></a></li>
-        <li><a href="#" title="Misc"><span class="glyphicon glyphicon-asterisk"></span></a></li>
+        <li><a href="#" title="Book" class="modal-category-active">
+            <div class="iconmelon">
+              <svg viewBox="0 0 32 32">
+                <g filter="">
+                  <use xlink:href="#geography"></use>
+                </g>
+              </svg>
+            </div></a>
+        </li>
+        <li><a href="#" title="Service">
+          <div class="iconmelon">
+              <svg viewBox="0 0 32 32">
+                <g filter="">
+                  <use xlink:href="#tools"></use>
+                </g>
+              </svg>
+            </div>
+        </a></li>
+        <li><a href="#" title="Event">
+          <div class="iconmelon">
+              <svg viewBox="0 0 32 32">
+                <g filter="">
+                  <use xlink:href="#calendar"></use>
+                </g>
+              </svg>
+            </div>
+        </a></li>
+        <li><a href="#" title="Misc">
+          <div class="iconmelon">
+              <svg viewBox="0 0 32 32">
+                <g filter="">
+                  <use xlink:href="#share"></use>
+                </g>
+              </svg>
+            </div>
+        </a></li>
       </ul>
       <%= f.hidden_field :category, value: "Book" %>
 

@@ -630,6 +630,7 @@ $.TokenList = function (input, url_or_data, settings) {
     function show_dropdown() {
         dropdown
             .css({
+                width: $(token_list).width() + parseInt($(token_list).css("padding-left"), 10) + parseInt($(token_list).css("padding-right"), 10),
                 position: "absolute",
                 top: $(token_list).offset().top + $(token_list).outerHeight(),
                 left: $(token_list).offset().left,

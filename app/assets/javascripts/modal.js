@@ -5,6 +5,11 @@ $(document).ready(function(){
 		$('#post_category').val($(this).attr('title')); 	
 	});
 
+
+	$('#activate-nowt-modal').click(function(){
+		$("#myModal").modal("show");
+	})
+
 	$('.cbp-mc-submit').click(function(){
 		$("#myModal").modal("hide");
 	})
