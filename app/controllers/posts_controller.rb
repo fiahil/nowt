@@ -3,7 +3,52 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-      @posts = Post.scoped.page(params[:page]).per(10)
+    sort = params[:sort]
+    time = params[:time]
+    category = params[:category]
+
+      if sort == "update"
+        case time
+        when "hour"
+          @posts = Post.updated_within_hour.page(params[:page]).per(10)
+        when "today"
+          @posts = Post.updated_within_day.page(params[:page]).per(10)
+        when "week"
+          @posts = Post.updated_within_week.page(params[:page]).per(10)
+        when "month"
+          @posts = Post.updated_within_month.page(params[:page]).per(10)
+        when "year"
+          @posts = Post.updated_within_year.page(params[:page]).per(10)
+        else 
+           @posts = Post.scoped.page(params[:page]).per(10)
+        end
+      else
+        case time
+        when "hour"
+          @posts = Post.created_within_hour.page(params[:page]).per(10)
+        when "today"
+          @posts = Post.created_within_day.page(params[:page]).per(10)
+        when "week"
+          @posts = Post.created_within_week.page(params[:page]).per(10)
+        when "month"
+          @posts = Post.created_within_month.page(params[:page]).per(10)
+        when "year"
+          @posts = Post.created_within_year.page(params[:page]).per(10)
+        else
+           @posts = Post.scoped.page(params[:page]).per(10)
+        end
+      end
+
+      case category
+      when "book"
+        @posts = @posts.find_books
+      when "service"
+        @posts = @posts.find_service
+      when "event"
+        @posts = @posts.find_events
+      when "misc"
+        @posts = @posts.find_misc
+      end
   end
   
   # GET /posts/1

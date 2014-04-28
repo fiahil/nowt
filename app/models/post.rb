@@ -31,4 +31,62 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :description, presence: true
   validates :category, presence: true
+
+  scope :created_within_hour, lambda { 
+    where(:created_at => 1.hour.ago..Time.now).order("posts.created_at DESC")
+  }
+
+  scope :created_within_day, lambda { 
+    where(:created_at => 1.day.ago..Time.now).order("posts.created_at DESC")
+  }
+
+  scope :created_within_week, lambda { 
+    where(:created_at => 1.week.ago..Time.now).order("posts.created_at DESC")
+  }
+
+  scope :created_within_month, lambda { 
+    where(:created_at => 1.month.ago..Time.now).order("posts.created_at DESC")
+  }
+
+  scope :created_within_year, lambda { 
+    where(:created_at => 1.year.ago..Time.now).order("posts.created_at DESC")
+  }
+
+  scope :updated_within_hour, lambda {
+    where(:updated_at => 1.hour.ago..Time.now).order("posts.updated_at DESC")
+  }
+  
+  scope :updated_within_day, lambda {
+    where(:updated_at => 1.day.ago..Time.now).order("posts.updated_at DESC")
+  }
+  
+  scope :updated_within_week, lambda {
+    where(:updated_at => 1.week.ago..Time.now).order("posts.updated_at DESC")
+  }
+
+  scope :updated_within_month, lambda {
+    where(:updated_at => 1.month.ago..Time.now).order("posts.updated_at DESC")
+  }
+
+  scope :updated_within_year, lambda {
+    where(:updated_at => 1.year.ago..Time.now).order("posts.updated_at DESC")
+  }
+
+  scope :find_books, lambda {
+    where(:category => "Book")
+  }
+
+  scope :find_service, lambda {
+    where(:category => "Service")
+  }
+
+  scope :find_events, lambda {
+    where(:category => "Event")
+  }
+
+  scope :find_misc, lambda {
+    where(:category => "Misc")
+  }
+
+
 end
