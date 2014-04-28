@@ -1,19 +1,24 @@
+
+<br />
 <div class="container">
-    <div class="row">
-        <% if(@posts.empty?) %>
-          <div class="alert alert-danger alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <strong>Warning!</strong> Nothing Found :[
-          </div>
-        <% else %>
-          <div class="nowts-container col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
-               <% @posts.each do |post| %>
-                    <%= render 'posts/nowt', :post => post %>
-               <% end %>
-               <%= paginate @posts %>
-          </div>
-
-        <% end %>
+  <div class="row">
+    <% if(@posts.empty?) %>
+    <div class="nowts-container col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
+      <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>Warning!</strong> Nothing Found!
+      </div>
+      <%= render 'posts/filter' %>
     </div>
-</div>
+    <% else %>
+    <div class="nowts-container col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
+     <%= render 'posts/filter' %>
+     <% @posts.each do |post| %>
+     <%= render 'posts/nowt', :post => post %>
+     <% end %>
+     <%= paginate @posts %>
+   </div>
 
+   <% end %>
+ </div>
+</div>
