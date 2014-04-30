@@ -14,4 +14,15 @@ $(document).ready(function(){
         $('#post_category').val($(this).attr('title')); 
         
     });
+
+	 $("#nowt-modal-next-btn").click(function(){
+	 	$(".modal-prev").removeClass("modal-active");
+	 	$(".modal-next").addClass("modal-active");
+	 });
+
+	 $("#nowt-modal-prev-btn").click(function(){
+	 	$(".modal-next").removeClass("modal-active");
+	 	$(".modal-prev").addClass("modal-active");
+	 });
+
 });
