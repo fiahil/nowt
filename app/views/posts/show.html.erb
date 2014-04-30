@@ -1,16 +1,18 @@
 <div class="container">
-    <div class="row">
-        <% if(!@post) %>
+	<div class="row">
+		<% if(!@post) %>
 			<div class="alert alert-danger alert-dismissable">
 				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 				<strong>Warning!</strong> Nothing Found :[
 			</div>
-        <% else %>
-			<div class="nowts-container col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
-			    <%= render 'posts/nowt', :post => @post %>
-				<%= commontator_thread(@post) %>
+		<% else %>
+			<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
+				<ul class="cbp_tmtimeline">
+					<%= render '/posts/nowt1', :post => @post %>
+				</ul>
 			</div>
-        <% end %>
-    </div>
+		<% end %>
+	</div>
 </div> <!-- end container-->
+
 
