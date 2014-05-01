@@ -58,9 +58,10 @@ div.bhoechie-tab-menu div.list-group>a:last-child{
 div.bhoechie-tab-menu div.list-group>a.active,
 div.bhoechie-tab-menu div.list-group>a.active .iconmelon,
 div.bhoechie-tab-menu div.list-group>a.active .fa{
-  background-color: #5A55A3;
+  background-color: #34495e;
   color: #ffffff;
   fill: #fff;
+  text-decoration: none;
 }
 div.bhoechie-tab-menu div.list-group>a.active:after{
   content: '';
@@ -71,7 +72,7 @@ div.bhoechie-tab-menu div.list-group>a.active:after{
   border-left: 0;
   border-bottom: 13px solid transparent;
   border-top: 13px solid transparent;
-  border-left: 10px solid #5A55A3;
+  border-left: 10px solid #34495e;
 }
 
 div.bhoechie-tab-content{
@@ -109,7 +110,7 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.modal-active){
  
 .cbp-mc-form input,
 .cbp-mc-form textarea {
-    border: 3px solid #5A55A3;
+    border: 3px solid #2c3e50;
 }
 
 .cbp-mc-form input[type="file"] {
@@ -125,7 +126,7 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.modal-active){
 .cbp-mc-form label:active + input,
 .cbp-mc-form label:active + textarea {
     outline: none;
-    border: 3px solid #5A55A3;
+    border: 3px solid #34495e;
 }
  
 .cbp-mc-form select:focus {
@@ -133,22 +134,22 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.modal-active){
 }
  
 ::-webkit-input-placeholder { /* WebKit browsers */
-    color: #5A55A3;
+    color: #2c3e50;
     font-style: italic;
 }
  
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color: #5A55A3;
+    color: #2c3e50;
     font-style: italic;
 }
  
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color: #5A55A3;
+    color: #2c3e50;
     font-style: italic;
 }
  
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-    color: #5A55A3;
+    color: #2c3e50;
     font-style: italic;
 }
  
@@ -167,7 +168,7 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.modal-active){
 .cbp-mc-form input.cbp-mc-submit,
 .cbp-mc-form input.cbp-mc-next,
 .cbp-mc-form input.cbp-mc-previous {
-    background: #5A55A3;
+    background: #2c3e50;
     border: none;
     color: #fff;
     width: auto;
@@ -183,7 +184,7 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.modal-active){
 .cbp-mc-form input.cbp-mc-submit:hover,
 .cbp-mc-form input.cbp-mc-next:hover,
 .cbp-mc-form input.cbp-mc-previous:hover {
-    background: #9b59b6;
+    background: #34495e;
 }
 
 .close .iconmelon {
