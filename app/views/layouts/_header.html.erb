@@ -42,7 +42,24 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <% unless user_signed_in? %>
       <ul class="nav navbar-right navbar-nav">
-        <li><%= link_to('Sign Up', register_path) %></li>
+        <li><%= link_to('Sign Up', register_path, class: "visible-xs") %></li>
+        <li class="dropdown hidden-xs">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="register-dropdown">Sign in <b class="caret"></b></a>
+          <ul class="dropdown-menu" style="padding: 15px 15px 11px;min-width: 250px;" role="menu" aria-labelledby="register-dropdown">
+            <li>
+              <div class="row">
+                <div class="col-md-12">
+                  <%= render('devise/registrations/registration_form') %>
+                </div>
+              </div>
+            </li>
+            <div class="login-or">
+              <hr class="hr-or">
+              <span class="span-or">or</span>
+            </div>
+            <%= render('devise/sessions/external_sign_in') %>
+          </ul>
+        </li>
         <li><%= link_to("Sign In", login_path, class: "visible-xs") %></li>
         <li class="dropdown hidden-xs">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
