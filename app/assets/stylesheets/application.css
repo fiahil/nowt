@@ -15,9 +15,11 @@
  */
 
 body {
-	background-color: #edf0f5;
+	background-color: #34495e;
 	padding-bottom: 40px;
 	font-family: "Open Sans";
+  padding-top: 100px;
+  /*background-image:url('/assets/brushed_@2X.png');*/
 }
 
 .iconmelon,
