@@ -1,5 +1,11 @@
 
 /*  bhoechie tab */
+
+.bhoechie-tab {
+  height: 100% !important;
+  min-height: 368px;
+}
+
 div.bhoechie-tab-container{
   z-index: 10;
   background-color: #ffffff;
@@ -75,7 +81,7 @@ div.bhoechie-tab-content{
   padding-top: 10px;
 }
 
-div.bhoechie-tab div.bhoechie-tab-content:not(.active){
+div.bhoechie-tab div.bhoechie-tab-content:not(.modal-active){
   display: none;
 }
 
@@ -111,7 +117,7 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
 } 
 
 .cbp-mc-form textarea {
-    min-height: 200px;
+    min-height: 150px;
 }
  
 .cbp-mc-form input:focus,
@@ -147,12 +153,20 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
 }
  
 .cbp-mc-submit-wrap {
+    position: absolute;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-right: 14px;
     clear: both;
+    bottom: 0;
+    right: 0;
+
 }
  
-.cbp-mc-form input.cbp-mc-submit {
+.cbp-mc-form input.cbp-mc-submit,
+.cbp-mc-form input.cbp-mc-next,
+.cbp-mc-form input.cbp-mc-previous {
     background: #5A55A3;
     border: none;
     color: #fff;
@@ -166,7 +180,9 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){
     letter-spacing: 1px;
 }
  
-.cbp-mc-form input.cbp-mc-submit:hover {
+.cbp-mc-form input.cbp-mc-submit:hover,
+.cbp-mc-form input.cbp-mc-next:hover,
+.cbp-mc-form input.cbp-mc-previous:hover {
     background: #9b59b6;
 }
 

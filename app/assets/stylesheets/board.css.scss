@@ -1,0 +1,229 @@
+.profile-nowt-link:hover {
+    text-decoration: none;
+}
+
+
+.post-title { 
+    padding-bottom: 5px;
+    word-wrap: break-word;
+    color:#489799 !important;
+    font-size: 1.5em;
+
+}
+
+.post-title:hover, .post-comment:hover {
+    text-decoration: none;
+}
+
+.post-description {
+    word-wrap: break-word;
+    margin: 0 0 30px 0;
+    font-size: 1.3em;
+    font-weight: 300;
+    line-height: 1.4 !important;
+}
+
+.post-header-line { 
+    border-top:1px solid #DDD;
+    border-bottom:1px solid #DDD;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 12px; 
+    color: grey;
+}
+
+.post-content { 
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.post-content img {
+    border-radius: 5px;
+    border: 3px solid #fff;
+}
+
+.post-divider {
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+.tag-line {
+    color: grey;
+    font-size: x-small;
+}
+
+.nowts-container {
+    background-color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    0px 0px 9px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         0px 0px 9px 0px rgba(50, 50, 50, 0.75);
+}
+
+.nowt-container {
+    background-color: #fff;
+    padding-bottom: 15px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
+}
+
+.nowt-image-title {
+    margin-top: 13px;
+}
+
+.nowt-title-info {
+    margin-top: -10px;
+    margin-left: 30px;
+}
+
+.nowt-description {
+    padding-left: 15px;
+}
+
+.thread {
+    padding-bottom: 15px;
+}
+
+.post-comments {
+    margin-top: 25px;
+}
+
+
+//FILTER
+#board-filter {
+    margin-top: 15px;
+}
+
+ul.ldd_menu{
+    margin:0px;
+    padding:0;
+    display:block;
+    height:50px;
+    list-style:none;
+    font-family:"Trebuchet MS", sans-serif;
+}
+ul.ldd_menu a{
+    text-decoration:none;
+}
+ul.ldd_menu > li{
+    float:left;
+    position:relative;
+}
+ul.ldd_menu > li > span{
+    float:left;
+    color:grey;
+    background-color:#D04528;
+    height:50px;
+    line-height:50px;
+    cursor:default;
+    padding:0px 20px;
+    text-shadow:0px 0px 1px #fff;
+    border-right:1px solid #DF7B61;
+    border-left:1px solid #C44D37;
+}
+ul.ldd_menu .ldd_submenu{
+    position:relative;
+    width:550px;
+    left:0px;
+    font-size:10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    display: none;
+    
+}
+a.ldd_subfoot{
+    background-color:#f0f0f0;
+    color:#444;
+    display:block;
+    clear:both;
+    padding:15px 20px;
+    text-transform:uppercase;
+    font-family: Arial, serif;
+    font-size:12px;
+    text-shadow:0px 0px 1px #fff;
+    -moz-box-shadow:0px 0px 2px #777 inset;
+    -webkit-box-shadow:0px 0px 2px #777 inset;
+    -box-shadow:0px 0px 2px #777 inset;
+}
+ul.ldd_menu ul{
+    list-style:none;
+    float:left;
+    margin:20px 0px 10px 30px;
+    padding:10px;
+}
+li.ldd_heading{
+    font-family: Georgia, serif;
+    font-size: 13px;
+    font-style: italic;
+    color:#FFB39F;
+    text-shadow:0px 0px 1px #B03E23;
+    padding:0px 0px 10px 0px;
+}
+ul.ldd_menu ul li a{
+    font-family: Arial, serif;
+    font-size:10px;
+    line-height:20px;
+    color:grey;
+    padding:1px 3px;
+}
+ul.ldd_menu ul li a:hover{
+    -moz-box-shadow:0px 0px 2px #333;
+    -webkit-box-shadow:0px 0px 2px #333;
+    box-shadow:0px 0px 2px #333;
+    color: #95a5a6;
+}
+
+
+.cbp_tmtimeline {
+    margin: 30px 0 0 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+} 
+ 
+.cbp_tmtimeline > li {
+    position: relative;
+}
+ 
+ 
+/* Right content */
+.cbp_tmtimeline > li .cbp_tmlabel {
+    margin: 0 0 0 25%;
+    background: #fff;
+    padding: 2em 2em 0 2em;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.4;
+    position: relative;
+    border-radius: 5px;
+}
+ 
+ 
+/* The triangle */
+.cbp_tmtimeline > li .cbp_tmlabel:after {
+    right: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-right-color: #fff;
+    border-width: 10px;
+    top: 10px;
+}
+ 
+/* The icons */
+.cbp_tmtimeline > li .cbp_tmicon {
+    position: absolute;
+    left: 23%;
+    top: 0;
+    margin: -15px 0 0 -75px;
+}
+
+

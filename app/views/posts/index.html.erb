@@ -11,11 +11,17 @@
       <%= render 'posts/filter' %>
     </div>
     <% else %>
-    <div class="nowts-container col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
-     <%= render 'posts/filter' %>
+    <div class="col-md-2 col-lg-2 col-md-offset-4 col-lg-offset-4">
+      <%= render 'posts/filter' %> 
+    </div>
+    <div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
+    
+    <ul class="cbp_tmtimeline">
      <% @posts.each do |post| %>
-     <%= render 'posts/nowt', :post => post %>
+     <%= render 'posts/nowt1', :post => post %>
+     <br />
      <% end %>
+    </ul>
      <%= paginate @posts %>
    </div>
 
