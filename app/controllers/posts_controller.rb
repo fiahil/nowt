@@ -78,7 +78,7 @@ class PostsController < ApplicationController
   def update
     if @post.increment(:update_count) && @post.update(post_params)
       @post.create_activity :update, owner: current_user
-      redirect_to @post, notice: 'Post was successfully updated.'
+      redirect_to @post, success: 'Post was successfully updated.'
     else
 
     end
