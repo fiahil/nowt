@@ -3,11 +3,11 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    sort = params[:sort]
-    time = params[:time]
-    category = params[:category]
+    @sort = params[:sort]
+    @time = params[:time]
+    @category = params[:category]
 
-      if sort == "update"
+      if @sort == "update"
         case time
         when "hour"
           @posts = Post.updated_within_hour.page(params[:page]).per(10)
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
            @posts = Post.scoped.order("updated_at DESC").page(params[:page]).per(10)
         end
       else
-        case time
+        case @time
         when "hour"
           @posts = Post.created_within_hour.page(params[:page]).per(10)
         when "today"
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
         end
       end
 
-      case category
+      case @category
       when "book"
         @posts = @posts.find_books
       when "service"

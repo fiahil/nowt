@@ -4,26 +4,30 @@
     <div class="ldd_submenu">
       <ul>
         <li class="ldd_heading">Upload Date</li>
-        <li><%= link_to "This hour", board_path(:category=>params[:category], :time=>"hour", :sort => params[:sort]) %></li>
-        <li><%= link_to "Today", board_path(:category=>params[:category], :time=>"today", :sort => params[:sort]) %></li>
-        <li><%= link_to "This week", board_path(:category=>params[:category], :time=>"week", :sort => params[:sort]) %></li>
-        <li><%= link_to "This month", board_path(:category=>params[:category], :time=>"month", :sort => params[:sort]) %></li>
-        <li><%= link_to "This year", board_path(:category=>params[:category], :time=>"year", :sort => params[:sort]) %></li>
+        <li><%= link_to "This hour", board_path(:category=>params[:category], :time=>"hour", :sort => params[:sort]), id: "hour" %></li>
+        <li><%= link_to "Today", board_path(:category=>params[:category], :time=>"today", :sort => params[:sort]), id: "today" %></li>
+        <li><%= link_to "This week", board_path(:category=>params[:category], :time=>"week", :sort => params[:sort]), id: "week" %></li>
+        <li><%= link_to "This month", board_path(:category=>params[:category], :time=>"month", :sort => params[:sort]), id: "month" %></li>
+        <li><%= link_to "This year", board_path(:category=>params[:category], :time=>"year", :sort => params[:sort]), id: "year" %></li>
       </ul>
       <ul>
         <li class="ldd_heading">By Category</li>
-        <li><%= link_to "Books", board_path(:category=>"book", :time => params[:time], :sort => params[:sort]) %></li>
-        <li><%= link_to "Services", board_path(:category=>"service", :time => params[:time],  :sort => params[:sort]) %></li>
-        <li><%= link_to "Events", board_path(:category=>"event", :time => params[:time],  :sort => params[:sort]) %></li>
-        <li><%= link_to "Miscellaneous", board_path(:category=>"misc", :time => params[:time],  :sort => params[:sort]) %></li>
+        <li><%= link_to "Books", board_path(:category=>"book", :time => params[:time], :sort => params[:sort]), id: "book" %></li>
+        <li><%= link_to "Services", board_path(:category=>"service", :time => params[:time],  :sort => params[:sort]), id: "service" %></li>
+        <li><%= link_to "Events", board_path(:category=>"event", :time => params[:time],  :sort => params[:sort]), id: "event" %></li>
+        <li><%= link_to "Miscellaneous", board_path(:category=>"misc", :time => params[:time],  :sort => params[:sort]), id: "misc" %></li>
       </ul>
       <ul>
         <li class="ldd_heading">Sort By</li>
-        <li><%= link_to "Upload date ", board_path(:category=>params[:category], :time => params[:time],  :sort => "upload") %></li>
-        <li><%= link_to "Updated date", board_path(:category=>params[:category], :time => params[:time],  :sort => "update") %></li>
+        <li><%= link_to "Upload date ", board_path(:category=>params[:category], :time => params[:time],  :sort => "upload"), id: "upload" %></li>
+        <li><%= link_to "Updated date", board_path(:category=>params[:category], :time => params[:time],  :sort => "update"), id: "update" %></li>
         <li><%= link_to "View count", board_path(:category=>params[:category], :time => params[:time],  :sort => "view") %></li>
         <li><%= link_to "Comments", board_path(:category=>params[:category], :time => params[:time],  :sort => "") %></li>
       </ul>
     </div>
   </li>
 </ul>
+
+<input type="hidden" value="<%= @sort %>" id="hidden-sort-input">
+<input type="hidden" value="<%= @category %>" id="hidden-category-input">
+<input type="hidden" value="<%= @time %>" id="hidden-time-input">

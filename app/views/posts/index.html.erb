@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <% if(@posts.empty?) %>
-    <div class="nowts-container col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
+    <div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
       <div class="alert alert-danger alert-dismissable">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <strong>Warning!</strong> Nothing Found!
@@ -11,7 +11,7 @@
       <%= render 'posts/filter' %>
     </div>
     <% else %>
-    <div class="col-md-2 col-lg-2 col-md-offset-4 col-lg-offset-4">
+    <div class="col-md-2 col-lg-2 col-md-offset-3 col-lg-offset-3">
       <%= render 'posts/filter' %> 
     </div>
     <div class="col-md-8 col-lg-8 col-md-offset-1 col-lg-offset-1">
