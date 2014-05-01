@@ -1,12 +1,15 @@
-<%= add_gritter("You have successfully created a nowt", :image => :success, :title => "Successful!", :sticky => true, :time => 6000) %>
-<% unless @post.tags.empty? %>
-	<% post_subs = get_subscriptions(@post) %>
 
-	<% post_subs.each do |sub| %>
-		<% publish_to sub do %>
-		  <%= add_gritter(get_tags(@post), :title => "#{@post.user.name} has created a nowt: #{@post.title}", :time => 7000, :image => "http://challenge.ucsd.edu/wp-content/uploads/2012/02/email_icon_small.gif") %>
+
+	<%= add_gritter("You have successfully created a nowt", :image => :success, :title => "Successful!", :time => 6000) %>
+	<% unless @post.tags.empty? %>
+		<% post_subs = get_subscriptions(@post) %>
+
+		<% post_subs.each do |sub| %>
+			<% publish_to sub do %>
+			  <%= add_gritter(get_tags(@post), :title => "#{@post.user.name} has created a nowt: #{@post.title}", :time => 7000, :image => "http://challenge.ucsd.edu/wp-content/uploads/2012/02/email_icon_small.gif") %>
+			<% end %>
 		<% end %>
 	<% end %>
-<% end %>
 
 
+	window.location.replace("/posts/<%= @post.id %>");
