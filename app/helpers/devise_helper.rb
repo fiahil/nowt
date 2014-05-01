@@ -6,6 +6,7 @@ module DeviseHelper
     if !flash.empty?
         flash_alerts.push(flash[:error]) if flash[:error]
         flash_alerts.push(flash[:alert]) if flash[:alert]
+        
         error_key = 'devise.failure.invalid'
     end
 
@@ -30,7 +31,7 @@ module DeviseHelper
     return '' if resource.errors.empty? && flash_alerts.empty?
     errors = resource.errors.empty? ? flash_alerts : resource.errors.full_messages
 
-    messages = errors.map { |msg| "-#{msg}\n" }.join
+    messages = flash_alerts.map { |msg| "-#{msg}\n" }.join
 
     return messages
   end

@@ -25,6 +25,10 @@ class User < ActiveRecord::Base
   acts_as_commontator
 
   attr_accessor :login
+  validates :name,
+  :uniqueness => {
+    :case_sensitive => false
+  }
 
   has_many :posts
   has_many :tags, through: :user_tag
