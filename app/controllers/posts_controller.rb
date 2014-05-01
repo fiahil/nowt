@@ -20,7 +20,7 @@ class PostsController < ApplicationController
         when "year"
           @posts = Post.updated_within_year.page(params[:page]).per(10)
         else 
-           @posts = Post.scoped.page(params[:page]).per(10)
+           @posts = Post.scoped.order("updated_at DESC").page(params[:page]).per(10)
         end
       else
         case time
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
         when "year"
           @posts = Post.created_within_year.page(params[:page]).per(10)
         else
-           @posts = Post.scoped.page(params[:page]).per(10)
+           @posts = Post.scoped.order("created_at DESC").page(params[:page]).per(10)
         end
       end
 
@@ -70,7 +70,7 @@ class PostsController < ApplicationController
     if @post.save
       @post.create_activity :create, owner: current_user
     else
-      redirect_to '/profile', alert: "Please fill out the form correctly!"
+      render action: "index"
     end
   end
 
@@ -80,7 +80,7 @@ class PostsController < ApplicationController
       @post.create_activity :update, owner: current_user
       redirect_to @post, notice: 'Post was successfully updated.'
     else
-      render action: 'edit'
+
     end
   end
 
