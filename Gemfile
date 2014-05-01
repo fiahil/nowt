@@ -22,6 +22,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use commontator
 gem 'commontator', '~> 4.5.0'
 
+# Use Mailboxer
+gem 'mailboxer'
+
 # File upload
 gem 'paperclip'
 
