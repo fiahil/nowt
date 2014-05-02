@@ -69,7 +69,6 @@ gem 'kaminari'
 gem 'pg'
 gem 'therubyracer', :platform => :ruby
 gem 'unicorn', :platform => :ruby
-gem 'haml-rails'
 gem 'simple_form'
 
 ruby '2.0.0'
