@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   def update_tags
     @user = User.find(current_user.id)
     unless @user.update_attributes(user_params)
-      flash[:error] = "Smart tags were not saved properly. Try again!"
+      flash[:error] = "Your account did not update successfully. Please try again"
     end
     redirect_to(root_path)
   end

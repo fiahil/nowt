@@ -15,9 +15,9 @@
   position: absolute;
   content: " ";
   width: 3px;
-  background-color: #fff;
   left: 80%;
   margin-left: -1.5px;
+  background-color: #fff;
 }
 .timeline > li {
   margin-bottom: 20px;
@@ -124,5 +124,10 @@
 }
 
 #timeline-header {
+  text-align: center;
+}
+
+#activity-text {
+  color: white;
   text-align: center;
 }

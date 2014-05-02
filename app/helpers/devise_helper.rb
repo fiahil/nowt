@@ -13,7 +13,7 @@ module DeviseHelper
     return '' if resource.errors.empty? && flash_alerts.empty?
     errors = resource.errors.empty? ? flash_alerts : resource.errors.full_messages
 
-    messages = errors.map { |msg| "-#{msg}\n" }.join
+    messages = errors.map { |msg| "- #{msg} <br />" }.join
 
     return messages
   end
@@ -31,7 +31,7 @@ module DeviseHelper
     return '' if resource.errors.empty? && flash_alerts.empty?
     errors = resource.errors.empty? ? flash_alerts : resource.errors.full_messages
 
-    messages = flash_alerts.map { |msg| "-#{msg}\n" }.join
+    messages = flash_alerts.map { |msg| "- #{msg} <br />" }.join
 
     return messages
   end
