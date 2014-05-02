@@ -15,8 +15,6 @@ ActiveRecord::Schema.define(version: 20140428214650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "pg_trgm"
-  enable_extension "fuzzystrmatch"
 
   create_table "activities", force: true do |t|
     t.integer  "trackable_id"
@@ -160,7 +158,7 @@ ActiveRecord::Schema.define(version: 20140428214650) do
     t.datetime "updated_at"
   end
 
-  add_index "user_tags", ["user_id", "tag_id"], name: "index_user_tags_on_user_id_and_tag_id", unique: true, using: :btree
+  add_index "user_tags", ["user_id", "tag_id"], name: "index_user_tags_on_user_id_and_tag_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"

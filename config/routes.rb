@@ -38,4 +38,11 @@ Nowt::Application.routes.draw do
   get '/emptySearch', to: "tasks#empty_search"
 
   mount Commontator::Engine => '/commontator'
+  resources :conversations, only: [:index, :show, :new, :create] do
+    member do
+      post :reply
+      post :trash
+      post :untrash
+    end
+  end
 end

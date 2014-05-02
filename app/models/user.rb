@@ -78,4 +78,7 @@ class User < ActiveRecord::Base
       where(conditions).first
     end
   end
+
+  acts_as_messageable
+  
 end
