@@ -6,7 +6,7 @@ class ConversationsController < ApplicationController
     recipient_name = conversation_params(:recipients)
     recipient = User.where(name: recipient_name).first
 
-    unless recipient.empty?
+    if recipient
       conversation = current_user.send_message(recipient, *conversation_params(:body, :subject)).conversation
       flash[:success] = "Message successfully sent"
       redirect_to conversation
