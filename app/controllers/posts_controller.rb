@@ -69,6 +69,7 @@ class PostsController < ApplicationController
     @post.user = current_user
     if @post.save
       @post.create_activity :create, owner: current_user
+      flash[:success] = "You have successfully created a nowt"
     else
       render action: "index"
     end
