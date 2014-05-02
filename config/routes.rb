@@ -14,7 +14,7 @@ Nowt::Application.routes.draw do
     post "/register" => "registrations#create"
     delete "/logout" => "devise/sessions#destroy"
     get "/profile" => "users#profile"
-    get "/edit" => "users#edit"
+    get "/account" => "users#edit"
     get "/edit_password" => "users#edit_password"
     get "/edit_name" => "users#edit_name"
     get "/edit_email" => "users#edit_email"
