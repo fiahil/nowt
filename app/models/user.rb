@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
     :case_sensitive => false
   }
 
-  has_many :posts
+  has_many :posts, dependent: :destroy
   has_many :tags, through: :user_tag
   has_many :user_tag
 
