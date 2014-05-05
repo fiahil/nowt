@@ -1,0 +1,178 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 account-container panel">
+      <h3 class="account-heading" style="">Account Settings
+        <div class="iconmelon" style="float:left; padding-right:5px;">
+          <svg viewBox="0 0 32 32">
+            <g filter="">
+              <use xlink:href="#gear"></use>
+            </g>
+          </svg>
+         </div>
+       </h3>
+      <div class="account-username"> 
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-2">
+            <h4 class="account-bolded">Username</h4>
+          </div>
+          <div class="col-lg-7 col-md-7 col-sm-7">
+            <div class="currentUsername">
+              <h4><%=@user.name %></h4>
+            </div>
+            <div class="editUsername">
+              <%= form_for(@user, :url => { :action => "update" }, html: {:class => 'form-signin', :multipart => true} ) do |f| %>
+                 <div class="input-group">
+                    <%= f.text_field :name, id:'usernameField', class: 'account-form', placeholder: '@user.name', required: true %>
+                  </div>
+                 
+                <div class="input-group">
+                  <%= f.password_field :current_password, class: 'account-form', placeholder: 'Confirm Password', required: true %>
+                </div>
+                <%= f.submit "Update!", class: "account-update-button", id: "loginsubmit" %>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-lg-1 col-md-1 col-sm-1 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
+            <a data-toggle="tooltip" href="#" class="account-edit" id="activate-username-edit" title="" data-original-title="Edit Username">
+              <div class="iconmelon">
+                <svg viewBox="0 0 32 32">
+                  <g filter="">
+                    <use xlink:href="#pencil"></use>
+                  </g>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="account-email"> 
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-2">
+            <h4 class="account-bolded">Email</h4>
+          </div>
+          <div class="col-lg-7 col-md-7 col-sm-7">
+            <div class="currentEmail">
+              <h4><%=@user.email %></h4>
+            </div>
+            <div class="editEmail">
+              <%= form_for(@user, :url => { :action => "update" }, html: {:class => 'form-signin'} ) do |f| %>
+                  <div class="input-group">
+                    <%= f.email_field :email, id:'emailField', class: 'account-form', placeholder: '@user.email', required: true %>
+                  </div>
+                  <div class="input-group">
+                    <%= f.password_field :current_password, class: 'account-form', placeholder: 'Confirm Password', required: true %>
+                  </div>
+                  <%= f.submit "Update!", class: "account-update-button", id: "loginsubmit" %>
+              <% end %>
+            </div>
+            <div class="btn-group btn-toggle" style="margin-top:10px"> 
+              <button class="btn btn-xs btn-default">ON</button>
+              <button class="btn btn-xs btn-primary active">OFF</button>
+              <p class="account-hint">Send notifications to this email address?</p>
+            </div>
+          </div>
+          <div class="col-lg-1 col-md-1 col-sm-1 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
+            <a data-toggle="tooltip" href="#" class="account-edit" id="activate-email-edit" title="" data-original-title="Edit Email">
+              <div class="iconmelon">
+                <svg viewBox="0 0 32 32">
+                  <g filter="">
+                    <use xlink:href="#pencil"></use>
+                  </g>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="account-password"> 
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-2">
+            <h4 class="account-bolded">Password</h4>
+          </div>
+          <div class="col-lg-7 col-md-7 col-sm-7">
+            <div class="currentPassword">
+              <h4>&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;</h4>
+            </div>
+            <div class="editPassword">
+              <%= form_for(@user, :url => { :action => "update" }, html: {:class => 'form-signin'} ) do |f| %>
+                <div class="input-group">
+                  <%= f.password_field :current_password, id:'passwordField', class: 'account-form', placeholder: 'Current Password', required: true %>
+                </div>
+
+                <div class="input-group">
+                  <%= f.password_field :password, class: 'account-form', placeholder: 'New Password', required: true %>
+                </div>
+
+                <div class="input-group">
+                  <%= f.password_field :password_confirmation, class: 'account-form', placeholder: 'Confirm New Password', required: true %>
+                </div>
+
+                <%= f.submit "Update!", class: "account-update-button", id: "loginsubmit" %>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-lg-1 col-md-1 col-sm-1 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
+            <a data-toggle="tooltip" href="#" class="account-edit" id="activate-password-edit" title="" data-original-title="Edit Password">
+              <div class="iconmelon">
+                <svg viewBox="0 0 32 32">
+                  <g filter="">
+                    <use xlink:href="#pencil"></use>
+                  </g>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="account-avatar"> 
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-2">
+            <h4 class="account-bolded">Avatar</h4>
+          </div>
+          <div class="col-lg-7 col-md-7 col-sm-7">
+            <div class="currentAvatar">
+              <% image_tag @user.avatar.url(:thumb), class: 'profile-img img-circle img-thumbnail' %>
+            </div>
+            <div class="editAvatar">
+              <%= form_for(@user, :url => { :action => "update_tags" }, html: {:class => 'form-signin', :multipart => true} ) do |f| %>
+                    <%= f.file_field :avatar %>
+                    <%= f.submit "Update!",style:"margin-top:15px", class: "account-update-button", id: "loginsubmit" %>
+                 <% end %>
+            </div>
+          </div>
+          <div class="col-lg-1 col-md-1 col-sm-1 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
+            <a data-toggle="tooltip" href="#" class="account-edit" id="activate-avatar-edit" title="" data-original-title="Edit Avatar">
+              <div class="iconmelon">
+                <svg viewBox="0 0 32 32">
+                  <g filter="">
+                    <use xlink:href="#pencil"></use>
+                  </g>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="account-school"> 
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-2">
+            <h4 class="account-bolded">School</h4>
+          </div>
+          <div class="col-lg-7 col-md-7 col-sm-7">
+            <h4>California State University: Long Beach</h4>
+          </div>
+          <div class="col-lg-1 col-md-1 col-sm-1">
+            <h4></h4>
+          </div>
+        </div>
+      </div>
+      <div class="account-delete">
+        <a data-confirm="Are you sure you want to delete your account forever?" class="account-update-button" data-method="delete" href="/delete" rel="nofollow">Delete Account</a>
+      </div>
+    </div>
+  </div>
+</div>

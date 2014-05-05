@@ -1,0 +1,73 @@
+.account-heading{
+  border-bottom: 2px solid #e5e5e5;
+  padding: 10px 10px 18px 10px;
+}
+
+.account-username{
+  border-bottom: 1px solid #e5e5e5;
+  padding: 10px 10px 18px 10px;
+}
+
+.account-email, .account-password, .account-avatar, .account-school{
+  border-bottom: 1px solid #e5e5e5;
+  padding: 20px 10px 20px 10px;
+}
+
+.account-delete{
+  padding: 20px 10px 20px 10px;
+  text-align:right;
+}
+
+.editUsername, .editEmail, .editPassword, .editAvatar{
+  display:none;
+  float:left;
+}
+
+
+
+
+
+.account-form{
+  border: 3px solid #2c3e50;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  line-height: 1.5;
+  font-size: 1.4em;
+  padding: 5px 10px 5px 10px;
+  width: 100%;
+  margin-bottom:10px;
+
+}
+
+.account-hint{
+  font-size:12px;
+  display:inline;
+  
+}
+
+.account-container{
+  background-color:white;
+  
+}
+
+.account-edit{
+  float:right;
+  
+}
+
+.account-bolded{
+  font-weight:bold;
+}
+
+.account-update-button{
+  background: #2c3e50;
+  border: none;
+  color: #fff;
+  width: auto;
+  cursor: pointer;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.1em;
+  border-radius: 2px;
+  letter-spacing: 1px;
+}

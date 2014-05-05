@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :pre_edit, only: [:edit, :edit_name, :edit_password, :edit_email, :edit_avatar]
   before_action :authenticate
-  layout :resolve_template
   # GET /users
   def index
     @users = User.all
@@ -95,13 +94,5 @@ class UsersController < ApplicationController
       @user = current_user
     end
     
-    def resolve_template
-      case action_name
-      when "edit", "edit_password", "edit_name", "edit_email", "edit_avatar"
-
-      else
-        "application"
-      end
-    end
 
 end
