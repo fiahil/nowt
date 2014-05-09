@@ -16,8 +16,22 @@ $(document).ready(function(){
     });
 
 	 $("#nowt-modal-next-btn").click(function(){
-	 	$(".modal-prev").removeClass("modal-active");
-	 	$(".modal-next").addClass("modal-active");
+	 	var title_value = $.trim($("#modal-title").val());
+	 	var descrip_value = $.trim($("#modal-description").val());
+	 	
+
+	 	if(title_value.length > 0 && descrip_value.length > 0 ){
+	 		$(".modal-prev").removeClass("modal-active");
+	 		$(".modal-next").addClass("modal-active");
+	 	} else {
+	 		if(title_value.length == 0){
+	 			$("#modal-title").addClass("modal-error");
+
+	 		}
+	 		if(descrip_value.length == 0){
+	 			$("#modal-description").addClass("modal-error");
+	 		}
+	 	}
 	 });
 
 	 $("#nowt-modal-prev-btn").click(function(){

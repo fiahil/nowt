@@ -121,6 +121,10 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.modal-active){
     min-height: 150px;
 }
  
+.modal-error {
+  border: 3px solid red !important;
+}
+
 .cbp-mc-form input:focus,
 .cbp-mc-form textarea:focus,
 .cbp-mc-form label:active + input,
