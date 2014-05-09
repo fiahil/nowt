@@ -65,13 +65,16 @@ class PostsController < ApplicationController
   # POST /posts
   def create
     @post = Post.new(post_params)
-
     @post.user = current_user
-    if @post.save
-      @post.create_activity :create, owner: current_user
-      flash[:success] = "You have successfully created a nowt"
-    else
-      render action: "index"
+    respond_to do |format|
+      if @post.save
+        @post.create_activity :create, owner: current_user
+        flash[:success] = "You have successfully created a nowt"
+        format.js { render 'create.js.erb'}
+      else
+         flash[:error] = 'Post was unsuccessfully created. Please try again'
+         format.js { render 'create_fail.js.erb'}
+      end
     end
   end
 
@@ -81,7 +84,7 @@ class PostsController < ApplicationController
       @post.create_activity :update, owner: current_user
       redirect_to @post, success: 'Post was successfully updated.'
     else
-
+      redirect_to @post, error: "Post was unsuccessfully updated"
     end
   end
 
