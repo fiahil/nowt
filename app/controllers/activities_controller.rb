@@ -11,7 +11,7 @@ class ActivitiesController < ApplicationController
   		activities = PublicActivity::Activity.where(key: "post.comment").where(trackable_id: my_posts).where(['owner_id <> ?', current_user]).ids
   		activities += PublicActivity::Activity.where(trackable_id: find_interests, owner_type: "User").where(['owner_id <> ?', current_user]).ids
 		
-		return PublicActivity::Activity.where(id: activities.uniq).page(params[:page]).per(10)
+		return PublicActivity::Activity.where(id: activities.uniq).order("updated_at DESC").page(params[:page]).per(10)
 	end
 
 end
