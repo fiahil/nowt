@@ -66,16 +66,16 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
-    respond_to do |format|
+    
       if @post.save
         @post.create_activity :create, owner: current_user
         flash[:success] = "You have successfully created a nowt"
-        format.js { render 'create.js.erb'}
       else
-         flash[:error] = 'Post was unsuccessfully created. Please try again'
-         format.js { render 'create_fail.js.erb'}
+        flash[:error] = 'Post was unsuccessfully created. Please try again'
+        respond_to do |format| 
+          format.js { render 'create_fail.js.erb'}
+        end
       end
-    end
   end
 
   # PATCH/PUT /posts/1
