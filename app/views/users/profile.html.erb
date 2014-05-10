@@ -6,7 +6,7 @@
 			<div class="row col-sm-12 col-md-12 col-lg-12">
 				<div class="profile panel panel-default">
           <%= link_to(account_path, "data-toggle" => "tooltip", "data-placement" => "bottom", title: "Change your account settings", :class => 'tooltips pull-left') do %>
-            <% image_tag @user.avatar.url(:thumb), class: 'profile-img' %>
+            <%= image_tag @user.avatar.url(:thumb), class: 'profile-img' %>
             <% end %>
 		            <div class="profile-body">																									
 		                <h4 class="media-heading"><%= @user.name %></h4>
