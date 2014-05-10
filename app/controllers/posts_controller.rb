@@ -58,7 +58,8 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     if @post.user != current_user
-      redirect_to @post, alert: "You do not have permission to edit this nowt!"
+      flash[:alert] = "You do not have permission to edit this nowt!"
+      redirect_to @post
     end
   end
 
@@ -82,9 +83,11 @@ class PostsController < ApplicationController
   def update
     if @post.increment(:update_count) && @post.update(post_params)
       @post.create_activity :update, owner: current_user
-      redirect_to @post, success: 'Post was successfully updated.'
+      flash[:success] = 'Post was successfully updated.'
+      redirect_to @post
     else
-      redirect_to @post, error: "Post was unsuccessfully updated"
+      flash[:error] = "Post was unsuccessfully updated. Please try again."
+      redirect_to @post
     end
   end
 
