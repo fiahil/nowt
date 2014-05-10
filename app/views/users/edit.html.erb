@@ -134,13 +134,13 @@
           </div>
           <div class="col-lg-7 col-md-7 col-sm-7">
             <div class="currentAvatar">
-              <% image_tag @user.avatar.url(:thumb), class: 'profile-img img-circle img-thumbnail' %>
+              <%= image_tag @user.avatar.url(:thumb), class: 'profile-img' %>
             </div>
             <div class="editAvatar">
               <%= form_for(@user, :url => { :action => "update_tags" }, html: {:class => 'form-signin', :multipart => true} ) do |f| %>
                     <%= f.file_field :avatar %>
                     <%= f.submit "Update!",style:"margin-top:15px", class: "account-update-button", id: "loginsubmit" %>
-                 <% end %>
+              <% end %>
             </div>
           </div>
           <div class="col-lg-1 col-md-1 col-sm-1 col-lg-offset-2 col-md-offset-2 col-sm-offset-2">
