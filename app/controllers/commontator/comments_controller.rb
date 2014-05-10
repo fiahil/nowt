@@ -45,12 +45,13 @@ module Commontator
             PostsController.create_comment_activity(@post, @user)
           end
           
-
-          format.html { redirect_to @thread }
           format.js
-        else
           format.html { redirect_to @thread }
+          
+        else
           format.js { render :new }
+          format.html { redirect_to @thread }
+          
         end
       end
     end
