@@ -9,7 +9,7 @@ class ConversationsController < ApplicationController
     if recipient
       conversation = current_user.send_message(recipient, *conversation_params(:body, :subject)).conversation
       flash[:success] = "Message successfully sent"
-      redirect_to conversation
+      redirect_to action: "index"
     else
       flash[:error] = "No such user exists. Please try again"
       redirect_to action: "create"
