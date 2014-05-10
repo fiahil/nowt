@@ -28,7 +28,8 @@ class User < ActiveRecord::Base
   validates :name,
   :uniqueness => {
     :case_sensitive => false
-  }
+  },
+  presence: true
 
   has_many :posts, dependent: :destroy
   has_many :tags, through: :user_tag
