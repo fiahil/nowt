@@ -103,7 +103,7 @@ Commontator.configure do |config|
   #   :r (reputation system)
   # Note: you can format how the votes are displayed by modifying the locale file
   # Default: :n
-  config.comment_voting = :ld
+  config.comment_voting = :n
 
   # This proc is called with the value of config.comment_voting as an argument,
   # as well as pos and neg
