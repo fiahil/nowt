@@ -29,7 +29,6 @@ gem 'mailboxer'
 gem 'paperclip'
 
 # Used for push notifications
-gem "private_pub"
 gem 'thin'
 
 # Unobtrusive Notification Look

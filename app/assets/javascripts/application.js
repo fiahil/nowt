@@ -11,7 +11,6 @@
 // about supported directives.
 //= require jquery
 //= require jquery_ujs
-//= require private_pub
 //= require gritter
 //= require_tree .
 

@@ -71,11 +71,10 @@ class PostsController < ApplicationController
       if @post.save
         @post.create_activity :create, owner: current_user
         flash[:success] = "You have successfully created a nowt"
+        redirect_to @post
       else
         flash[:error] = 'Post was unsuccessfully created. Please try again'
-        respond_to do |format| 
-          format.js { render 'create_fail.js.erb'}
-        end
+        redirect_to(:back)
       end
   end
 

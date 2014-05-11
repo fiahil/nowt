@@ -24,23 +24,6 @@
 
 <%= content_for?(:content) ? yield(:content) : yield %>
 
-<% if user_signed_in? %>
-	<% unless current_user.tags.empty? %>
-		<% subscriptions = get_subscriptions(current_user) %>
-
-		<% subscriptions.each do |sub| %>
-			<%= subscribe_to(sub) %>
-		<% end %>
-	<% end %>
-
-  <% unless current_user.posts.empty? %>
-    <% posts = get_user_posts(current_user) %>
-
-    <% posts.each do |post| %>
-      <%= subscribe_to(post) %>
-    <% end %>
-  <% end %>
-<% end %>
 
 <script>
       var url ='<%= asset_path("icons.svg") %>';
