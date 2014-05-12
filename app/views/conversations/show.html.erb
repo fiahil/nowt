@@ -1,15 +1,36 @@
-<h1>
-  <%= conversation.subject %>
-</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 account-container panel">
+        <h3 class="account-heading" style="">Conversation with 
+          <div class="iconmelon" style="float:left; padding-right:5px;">
+            <svg viewBox="0 0 32 32">
+              <g filter="">
+                <use xlink:href="#mail"></use>
+              </g>
+            </svg>
+           </div>
+          <h4 class="account-bolded">Discussion: <%= conversation.subject %></h4>
+         </h3>
 <ul>
   <%= content_tag_for(:li, conversation.receipts_for(current_user)) do |receipt| %>
     <% message = receipt.message %>
-    <h3>
-      <%= message.subject %>
-    </h3>
-    <p>
-      <%= message.body %>
-    </p>
+      <div class="account-username"> 
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <h4><%= receipt.notification.sender.name %></h4>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-7">
+              <h4>
+                <%= message.subject %>
+              </h4>
+              <p>
+                <%= message.body %>
+              </p>
+            </div>
+        </div>
+    </div>
   <% end %>
 </ul>
+
+  <h4>Reponse:</h4>
 <%= render 'messages/form', conversation: conversation %>

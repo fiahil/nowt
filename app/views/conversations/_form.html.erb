@@ -1,9 +1,50 @@
-<%= simple_form_for :conversation, url: :conversations do |f| %>
-  <%= f.input :recipients %>
-  <%= f.input :subject %>
-  <%= f.input :body %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2 account-container panel">
+    	<%= form_for :conversation, url: :conversations do |f| %>
+	      <h3 class="account-heading" style="">Send a Message
+	        <div class="iconmelon" style="float:left; padding-right:5px;">
+	          <svg viewBox="0 0 32 32">
+	            <g filter="">
+	              <use xlink:href="#mail"></use>
+	            </g>
+	          </svg>
+	         </div>
+	       </h3>
+	    <div class="account-username"> 
+	        <div class="row">
+	          <div class="col-lg-2 col-md-2 col-sm-2">
+	            <h4 class="account-bolded">Recipient</h4>
+	          </div>
+	          <div class="col-lg-7 col-md-7 col-sm-7">
+	          	  <%= f.text_field :recipients %>
+	          </div>
+	      </div>
+		</div>
+
+		<div class="account-username"> 
+	        <div class="row">
+	          <div class="col-lg-2 col-md-2 col-sm-2">
+	            <h4 class="account-bolded">Subject</h4>
+	          </div>
+	          <div class="col-lg-7 col-md-7 col-sm-7">
+	          	  <%= f.text_field :subject %>
+	          </div>
+	      </div>
+		</div>
+
+		<div class="account-username"> 
+	        <div class="row">
+	          <div class="col-lg-2 col-md-2 col-sm-2">
+	            <h4 class="account-bolded">Body</h4>
+	          </div>
+	          <div class="col-lg-7 col-md-7 col-sm-7">
+	          	  <%= f.text_field :body %>
+	          </div>
+	      </div>
+		</div>
+
   <div class="form-actions">
-    <%= f.button :submit, class: 'btn-primary' %>
-    <%= submit_tag 'Cancel', type: :reset, class: 'btn btn-danger' %>
+    <%= f.button :submit, class: 'account-update-button', style: "margin-top:10px; float:right" %>
   </div>
 <% end %>
