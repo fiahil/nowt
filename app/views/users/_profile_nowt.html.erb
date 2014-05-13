@@ -2,7 +2,7 @@
 <div class="row destacados">
     <div class="col-md-12 col-lg-12">
         <div>
-            <img src="http://lorempixel.com/200/200/abstract/1/" alt="Texto Alternativo" class="img-circle img-thumbnail">
+            <%= image_tag post.picture.url(:thumb), class: 'profile-img img-caption' %>
             <h2 class="post-title"><%= truncate_name(post.title) %></h2>
             <div class="tag-line">
                 </span>by <%= post.user.name %><span class="post-divider">|</span>

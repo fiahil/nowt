@@ -26,7 +26,7 @@
 		        <div class="row post-content">
 		            <div class="col-md-3 col-lg-3">
 		                <%= link_to "/posts/#{post.id}" do %>
-		                    <img src="http://4.bp.blogspot.com/-_lqoNpVXeU4/UkxQ7N-QW8I/AAAAAAAACTw/pni-TZyp17o/s1600/cool+share+button+effects+styles.png" alt="" class="img-responsive">
+		                    <%= image_tag post.picture.url(:thumb), class: 'profile-img img-caption' %>
 		                <% end %>
 		            </div>
 		            <div class="col-md-9 col-lg-9">
