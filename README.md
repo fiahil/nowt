@@ -1,7 +1,7 @@
 Nowt (nōt)
 ====
 
-[http://nowt.herokuapp.com/](Live on Heroku)
+[Live on Heroku](http://nowt.herokuapp.com/)
 
 "Nowt," derived from "Note on the wall," is a web application that provides users a way to easily create postings to sell goods, plan events, offer services, and include numerous academically focused features.
 
